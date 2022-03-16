@@ -14,6 +14,8 @@ Translation to other natural languages is also done: English, Korean, Russian, S
 
 ## Examples
 
+### Data query (wrangling) workflows
+
 ```perl6
 use DSL::General::DataQueryWorkflows;
 use DSL::Bulgarian::DataQueryWorkflows::Grammar;
@@ -28,6 +30,20 @@ for <English Python::pandas Raku::Reshapers Russian> -> $t {
     say ToDataQueryWorkflowCode($command, $t, lang => 'Bulgarian', format => 'code');
 }
 ```
+
+-------
+
+## Implementation notes
+
+The rules in the file
+["DataQueryPhrases.rakumod"](./lib/DSL/Bulgarian/DataQueryWorkflows/Grammar/DataQueryPhrases.rakumod)
+are derived from file
+["DataQueryPhrases-template"](./lib/DSL/Bulgarian/DataQueryWorkflows/Grammar/DataQueryPhrases-template)
+using the package
+["Grammar::TokenProcessing"](https://github.com/antononcube/Raku-Grammar-TokenProcessing)
+, [AAp2].
+
+*TBF...*
 
 -------
 
