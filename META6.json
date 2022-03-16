@@ -1,0 +1,38 @@
+{
+  "name": "DSL::Bulgarian",
+  "description": "Computational workflows building by natural language commands in Bulgarian.",
+  "version": "0.1.0",
+  "perl": "6.d",
+  "authors": [
+    "Anton Antonov"
+  ],
+  "auth": "github:antononcube",
+  "depends": [
+    "DSL::Shared",
+    "DSL::General::DataQueryWorkflows"
+  ],
+  "build-depends": [],
+  "test-depends": [],
+  "provides": {
+    "DSL::Bulgarian::DataQueryWorkflows::Grammar": "lib/DSL/Bulgarian/DataQueryWorkflows/Grammar.rakumod",
+    "DSL::Bulgarian::DataQueryWorkflows::Grammar::DataQueryPhrases": "lib/DSL/Bulgarian/DataQueryWorkflows/Grammar/DataQueryPhrases.rakumod"
+  },
+  "resources": [],
+  "license": "GPL-3.0-or-later",
+  "tags": [
+    "data query",
+    "data",
+    "tidyverse",
+    "sql",
+    "pandas",
+    "dataset",
+    "query",
+    "parser",
+    "interpreter",
+    "monad",
+    "workflow",
+    "pipeline"
+  ],
+  "api": "1",
+  "source-url": "https://github.com/antononcube/Raku-DSL-Bulgarian.git"
+}

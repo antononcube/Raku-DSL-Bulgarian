@@ -1,0 +1,61 @@
+use DSL::Shared::Utilities::DeterminedWordsMatching;
+
+# Data query specific phrases
+role DSL::Bulgarian::DataQueryWorkflows::Grammar::DataQueryPhrases {
+    # Tokens
+    token arrange-verb { 'подреди' }
+    token ascending-adjective { 'възходящ' }
+    token association-noun { 'асоциация' }
+    token broad-adjective { 'широка' }
+    token cast-verb { 'формирай' }
+    token character-noun { 'символ' }
+    token combine-verb { 'комбинирай' }
+    token cross-verb { 'кръстосана' }
+    token descending-adjective { 'низходящ' }
+    token dictionary-noun { 'речник' }
+    token distinct-adjective { 'уникален' | 'уникални' }
+    token divider-noun { 'разделител' }
+    token duplicate-adjective { 'дублиран' }
+    token duplicates-noun { 'дублирани' }
+    token form-noun { 'форма' }
+    token format-noun { 'формат' }
+    token formula-noun { 'формула' }
+    token full-adjective { 'пълен' | 'пълна' }
+    token glimpse-verb { 'надзърни' | 'зърни' }
+    token group-verb { 'групирай' }
+    token inner-adjective { 'вътрешен' | 'вътрешна' }
+    token join-noun { 'връзка' }
+    token keep-verb { 'запази' дръж }
+    token left-adjective { 'лява' }
+    token long-adjective { 'дълга' }
+    token longer-adjective { 'по-дълга' }
+    token map-verb { 'асоциирай' }
+    token mapping-noun { 'асоцииране' }
+    token melt-verb { 'разтопи' }
+    token merge-verb { 'слей' }
+    token mutate-verb { 'мутирай' }
+    token narrow-adjective { 'тясна' }
+    token omit-directive { 'прескочи' | 'изключи' }
+    token only-adverb { 'само' }
+    token order-verb { 'нареди'  }
+    token pivot-verb { 'развий' }
+    token rename-verb { 'преименувай' }
+    token right-adjective { 'дясна' }
+    token safe-adjective { 'сигурна' }
+    token safely-adverb { 'сигурно' }
+    token select-verb { 'избери' }
+    token semi-adjective { 'полу' }
+    token separator-noun { 'разделител' }
+    token skim-verb { 'преглед' }
+    token skimming-noun { 'преглеждане' }
+    token sort-verb { 'сортирай' | 'нареди' }
+    token splitter-noun { 'разделител' }
+    token splitting-noun { 'разделяне' }
+    token summarise-verb { 'обобщи' }
+    token summarize-verb { 'обобщи' }
+    token tabulate-verb { 'табулиряй' }
+    token ungroup-verb { 'разгрупирай' }
+    token unique-adjective { 'уникален' | 'уникални' }
+    token wide-adjective { 'широка' }
+    token wider-adjective { 'по-широка' }
+}
