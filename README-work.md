@@ -16,15 +16,16 @@ Translation to other natural languages is also done: English, Korean, Russian, S
 
 ```perl6
 use DSL::General::DataQueryWorkflows;
+use DSL::Bulgarian::DataQueryWorkflows::Grammar;
 
 my $command = '
 зареди данните iris;
 групирай с колоната Species;
 покажи броевете
 ';
-for <Python::pandas R::tidyverse Raku::Reshapers WL::System> -> $t {
-    say '-' x 60, "\n", $t;
-    ToDataQueryWorkflowCode($command, $t, lang => 'Bulgarian', format => 'code');
+for <English Python::pandas Raku::Reshapers Russian> -> $t {
+    say '=' x 60, "\n", $t, "\n", '-' x 60;
+    say ToDataQueryWorkflowCode($command, $t, lang => 'Bulgarian', format => 'code');
 }
 ```
 
