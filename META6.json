@@ -9,7 +9,7 @@
   "auth": "github:antononcube",
   "depends": [
     "DSL::Shared",
-    "DSL::General::DataQueryWorkflows"
+    "DSL::English::DataQueryWorkflows"
   ],
   "build-depends": [],
   "test-depends": [],
