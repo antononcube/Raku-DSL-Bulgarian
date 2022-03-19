@@ -1,9 +1,8 @@
-use v6;
-use lib 'lib';
+
 use DSL::Bulgarian::DataQueryWorkflows::Grammar;
 use Test;
 
-plan 11;
+plan 12;
 
 # Shortcut
 my $pCOMMAND = DSL::Bulgarian::DataQueryWorkflows::Grammar;
@@ -17,6 +16,9 @@ ok $pCOMMAND.parse('превърни в тясна форма'),
 
 ok $pCOMMAND.parse('превърни в дълъг формат'),
         'превърни в дълъг формат';
+
+ok $pCOMMAND.parse('към дългата форма'),
+        'към дългата форма';
 
 ok $pCOMMAND.parse('към по-дългата форма'),
         'към по-дългата форма';
