@@ -35,11 +35,11 @@ role DSL::Bulgarian::DataQueryWorkflows::Grammar::DataQueryPhrases {
     token merge-noun:sym<Bulgarian> { :i 'сливане' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'сливане', 2) }> }
     token merge-verb:sym<Bulgarian> { :i 'слей' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'слей', 2) }> }
     token mutate-verb:sym<Bulgarian> { :i 'мутирай' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'мутирай', 2) }> }
-    token narrow-adjective:sym<Bulgarian> { :i 'тясна' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'тясна', 2) }> }
+    token narrow-adjective:sym<Bulgarian> { :i 'тесен' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'тесен', 2) }> | 'тясна' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'тясна', 2) }> | 'тясно' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'тясно', 2) }> }
     token omit-directive:sym<Bulgarian> { :i 'прескочи' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'прескочи', 2) }> | 'изключи' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'изключи', 2) }> }
     token only-adverb:sym<Bulgarian> { :i 'само' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'само', 2) }> }
     token order-verb:sym<Bulgarian> { :i 'нареди' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'нареди', 2) }> }
-    token pivot-verb:sym<Bulgarian> { :i 'развий' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'развий', 2) }> }
+    token pivot-verb:sym<Bulgarian> { :i 'развий' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'развий', 2) }> | 'развърни' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'развърни', 2) }> }
     token rename-verb:sym<Bulgarian> { :i 'преименувай' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'преименувай', 2) }> }
     token right-adjective:sym<Bulgarian> { :i 'десен' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'десен', 2) }> | 'дясна' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'дясна', 2) }> | 'дясно' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'дясно', 2) }> }
     token safe-adjective:sym<Bulgarian> { :i 'сигурна' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'сигурна', 2) }> }

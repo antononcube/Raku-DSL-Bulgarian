@@ -35,11 +35,11 @@ role DSL::Bulgarian::DataQueryWorkflows::Grammar::DataQueryPhrases {
     token merge-noun { 'сливане' }
     token merge-verb { 'слей' }
     token mutate-verb { 'мутирай' }
-    token narrow-adjective { 'тясна' }
+    token narrow-adjective { 'тесен' | 'тясна' | 'тясно' }
     token omit-directive { 'прескочи' | 'изключи' }
     token only-adverb { 'само' }
     token order-verb { 'нареди'  }
-    token pivot-verb { 'развий' }
+    token pivot-verb { 'развий' | 'развърни' }
     token rename-verb { 'преименувай' }
     token right-adjective { 'десен' | 'дясна' | 'дясно' }
     token safe-adjective { 'сигурна' }
