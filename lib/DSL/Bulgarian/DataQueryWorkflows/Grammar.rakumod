@@ -4,6 +4,7 @@ use DSL::Shared::Roles::Bulgarian::ListManagementCommand;
 use DSL::Shared::Roles::Bulgarian::PipelineCommand;
 use DSL::Shared::Roles::ErrorHandling;
 use DSL::Shared::Roles::PredicateSpecification;
+use DSL::Shared::Roles::Bulgarian::PredicateSpecification;
 
 use DSL::English::DataQueryWorkflows::Grammar::DataQueryPhrases;
 use DSL::English::DataQueryWorkflows::Grammarish;
@@ -16,6 +17,7 @@ grammar DSL::Bulgarian::DataQueryWorkflows::Grammar
         does DSL::Shared::Roles::ErrorHandling
         does DSL::Shared::Roles::Bulgarian::ListManagementCommand
         does DSL::Shared::Roles::PredicateSpecification
+        does DSL::Shared::Roles::Bulgarian::PredicateSpecification
         does DSL::Shared::Roles::Bulgarian::PipelineCommand {
 
 }
