@@ -15,8 +15,8 @@ role DSL::Bulgarian::DataQueryWorkflows::Grammar::DataQueryPhrases {
     token dictionary-noun { 'речник' }
     token distinct-adjective { 'уникален' | 'уникални' }
     token divider-noun { 'разделител' }
-    token duplicate-adjective { 'дублиран' }
-    token duplicates-noun { 'дублирани' }
+    token duplicate-adjective { 'дублиран' | 'повторен' }
+    token duplicates-noun { 'дублирани' | 'повторени' }
     token form-noun { 'форма' }
     token format-noun { 'формат' }
     token formula-noun { 'формула' }
@@ -25,7 +25,7 @@ role DSL::Bulgarian::DataQueryWorkflows::Grammar::DataQueryPhrases {
     token group-verb { 'групирай' }
     token inner-adjective { 'вътрешен' | 'вътрешна' }
     token join-noun { 'връзка' }
-    token keep-verb { 'запази' дръж }
+    token keep-verb { 'запази' | 'дръж' }
     token left-adjective { 'лява' }
     token long-adjective { 'дълга' }
     token longer-adjective { 'по-дълга' }
