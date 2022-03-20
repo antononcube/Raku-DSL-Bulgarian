@@ -7,7 +7,7 @@ use Test;
 plan 11;
 
 sub to-tidyverse(Str:D $commands) {
-    ToDataQueryWorkflowCode($commands, 'R-tidyverse', lang => 'Bulgarian', format => 'code')
+    ToDataQueryWorkflowCode($commands, 'R-tidyverse', language => 'Bulgarian', format => 'code')
 }
 
 #-----------------------------------------------------------
