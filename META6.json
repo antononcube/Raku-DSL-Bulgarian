@@ -15,7 +15,9 @@
   "test-depends": [],
   "provides": {
     "DSL::Bulgarian::DataQueryWorkflows::Grammar": "lib/DSL/Bulgarian/DataQueryWorkflows/Grammar.rakumod",
-    "DSL::Bulgarian::DataQueryWorkflows::Grammar::DataQueryPhrases": "lib/DSL/Bulgarian/DataQueryWorkflows/Grammar/DataQueryPhrases.rakumod"
+    "DSL::Bulgarian::DataQueryWorkflows::Grammar::DataQueryPhrases": "lib/DSL/Bulgarian/DataQueryWorkflows/Grammar/DataQueryPhrases.rakumod",
+    "DSL::Bulgarian::RecommenderWorkflows::Grammar": "lib/DSL/Bulgarian/RecommenderWorkflows/Grammar.rakumod",
+    "DSL::Bulgarian::RecommenderWorkflows::Grammar::RecommenderPhrases": "lib/DSL/Bulgarian/RecommenderWorkflows/Grammar/RecommenderPhrases.rakumod"
   },
   "resources": [],
   "license": "GPL-3.0-or-later",
