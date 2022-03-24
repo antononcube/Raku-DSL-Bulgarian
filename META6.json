@@ -9,26 +9,25 @@
   "auth": "github:antononcube",
   "depends": [
     "DSL::Shared",
-    "DSL::English::DataQueryWorkflows"
+    "DSL::English::DataQueryWorkflows",
+    "DSL::English::LatentSemanticAnalysisWorkflows",
+    "DSL::English::RecommenderWorkflows"
   ],
   "build-depends": [],
   "test-depends": [],
   "provides": {
     "DSL::Bulgarian::DataQueryWorkflows::Grammar": "lib/DSL/Bulgarian/DataQueryWorkflows/Grammar.rakumod",
     "DSL::Bulgarian::DataQueryWorkflows::Grammar::DataQueryPhrases": "lib/DSL/Bulgarian/DataQueryWorkflows/Grammar/DataQueryPhrases.rakumod",
+    "DSL::Bulgarian::LatentSemanticAnalysisWorkflows::Grammar": "lib/DSL/Bulgarian/LatentSemanticAnalysisWorkflows/Grammar.rakumod",
+    "DSL::Bulgarian::LatentSemanticAnalysisWorkflows::Grammar::RecommenderPhrases": "lib/DSL/Bulgarian/LatentSemanticAnalysisWorkflows/Grammar/LatentSemanticAnalysisPhrases.rakumod",
     "DSL::Bulgarian::RecommenderWorkflows::Grammar": "lib/DSL/Bulgarian/RecommenderWorkflows/Grammar.rakumod",
     "DSL::Bulgarian::RecommenderWorkflows::Grammar::RecommenderPhrases": "lib/DSL/Bulgarian/RecommenderWorkflows/Grammar/RecommenderPhrases.rakumod"
   },
   "resources": [],
   "license": "GPL-3.0-or-later",
   "tags": [
-    "data query",
-    "data",
-    "tidyverse",
-    "sql",
-    "pandas",
-    "dataset",
-    "query",
+    "bulgarian",
+    "dsl",
     "parser",
     "interpreter",
     "monad",
