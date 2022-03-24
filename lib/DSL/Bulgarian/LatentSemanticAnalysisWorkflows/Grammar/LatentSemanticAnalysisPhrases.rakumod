@@ -37,23 +37,13 @@ role DSL::Bulgarian::LatentSemanticAnalysisWorkflows::Grammar::LatentSemanticAna
     token topic-noun:sym<Bulgarian> { :i 'тема' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'тема', 2) }> }
     token topics-noun:sym<Bulgarian> { :i 'теми' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'теми', 2) }> }
 
-
-
     # Document term matrix creation related
     rule data-element:sym<Bulgarian> {  'изречение' | 'параграф' | 'секция' | 'глава' | <word-noun>  }
     rule data-elements:sym<Bulgarian> {  'изречения' | 'параграфи' | 'секции' | 'глави' | <words-noun>  }
 
-    rule docs:sym<Bulgarian> {  <document-noun> | <documents-noun> | 'docs' | <item-noun> | <items-noun>  }
-    rule terms:sym<Bulgarian> { 'word' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'word', 2) }> | 'words' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'words', 2) }> | 'term' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'term', 2) }> | 'terms' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'terms', 2) }> }
-
-    rule stemming-rules-phrase:sym<Bulgarian> {  'stemming' ['rules']?  }
-    rule stop-words-phrase:sym<Bulgarian> {  'stop' 'words'  }
-
-    rule text-corpus-phrase:sym<Bulgarian> {  'texts' | 'text' [ 'corpus' | 'collection' ]?  }
-
     # Topics and thesaurus
     rule statistical-thesaurus-phrase:sym<Bulgarian> {  <statistical>? <thesaurus-noun>  }
-    rule topics-table-phrase:sym<Bulgarian> {  <table-noun> [ 'с' | 'от' ] <topics-noun>  }
+    rule topics-table-phrase:sym<Bulgarian> {  <table-noun> [ 'с' | 'от' | 'на' ] <topics-noun>  }
 
     # LSI specific
     token frequency-noun:sym<Bulgarian> { :i 'честота' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'честота', 2) }> }

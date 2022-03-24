@@ -43,7 +43,7 @@ role DSL::Bulgarian::LatentSemanticAnalysisWorkflows::Grammar::LatentSemanticAna
 
     # Topics and thesaurus
     rule statistical-thesaurus-phrase { <statistical>? <thesaurus-noun> }
-    rule topics-table-phrase { <table-noun> [ 'с' | 'от' ] <topics-noun> }
+    rule topics-table-phrase { <table-noun> [ 'с' | 'от' | 'на' ] <topics-noun> }
 
     # LSI specific
     token frequency-noun { 'честота' }
