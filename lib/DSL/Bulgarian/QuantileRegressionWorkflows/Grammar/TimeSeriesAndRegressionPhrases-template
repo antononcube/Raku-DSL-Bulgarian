@@ -1,0 +1,66 @@
+use v6;
+
+use DSL::Shared::Utilities::DeterminedWordsMatching;
+use DSL::Shared::Roles::Bulgarian::PipelineCommand;
+
+# Time series and regression specific phrases
+role DSL::Bulgarian::QuantileRegressionWorkflows::Grammar::TimeSeriesAndRegressionPhrases
+        does DSL::Shared::Roles::Bulgarian::PipelineCommand {
+
+    # Proto tokens
+    token absolute-adjective { 'абсолютен' | 'абсолютна' | 'абсолютна' | 'абсолютни' }
+    token anomalies-noun { 'аномалии' }
+    token anomaly-noun { 'аномалия' }
+    token average-adjective { 'средeн' | 'среднa' | 'средно' | 'средни' }
+    token curve-noun { 'крива' }
+    token curves-noun { 'криви' }
+    token date-noun { 'дата' }
+    token dates-noun { 'дати' }
+    token degree-noun { 'степен' }
+    token error-noun { 'грешка' }
+    token errors-noun { 'грешка' | 'грешки' }
+    token fit-noun { 'пасване' | 'напасване' }
+    token fitted-adjective { 'пасната' | 'напасната' }
+    token hold-verb { 'дръж' }
+    token interpolation-adjective { 'интерполациoнен' | 'интерполациoнна' | 'интерполациoнно' | 'интерполациoнни' }
+    token interpolation-noun { 'интерполация' }
+    token knots-noun { 'възли' | 'възели' | 'възла' }
+    token least-adjective { 'най-малък' | 'най-малка' | 'най-малко' | 'най-малки' }
+    token linear-adjective { 'линейна' }
+    token map-noun { 'съпоставка' }
+    token mean-adjective { <average-adjective> }
+    token mean-noun { 'средна' 'стойност' }
+    token median-adjective { 'медианен' | 'медианна' | 'медианно' | 'медианни' }
+    token median-noun { 'медиана' }
+    token moving-adjective { 'движещ' | 'движеща' | 'движещо' | 'движещи' | 'пълзящ' | 'пълзяща' | 'пълзящо' | 'пълзящи' }
+    token order-noun { 'порядък' | 'степен' }
+    token origin-noun { 'нула' | 'start' }
+    token outlier-noun { 'извънредна' 'стойност' }
+    token outliers-noun { <outlier-noun> | 'извънреди' 'стойности' }
+    token probabilities-noun { 'вероятности' }
+    token probability-noun { 'вероятност' }
+    token quantile-noun { 'квантила' }
+    token quantiles-noun { 'квантили' }
+    token regressand-noun { 'регресанд' }
+    token regression-noun { 'регресия' }
+    token regressor-noun { 'регресор' }
+    token relative-adjective { 'относителен' | 'относителна' |  'относително' |  'относителни' }
+    token residuals-noun { 'остатъци' }
+    token squares-noun { 'квадрати' }
+    token x-symbol { 'x' | 'X' }
+    token y-symbol { 'y' | 'Y' }
+
+    # Directives
+    token resample-directive { 'ресемплирай' }
+    token rescale-directive { 'премащабирай' }
+
+    # Rules
+    rule least-squares-phrase { <least-adjective> <squares-noun> }
+    rule qr-object { [ 'КР' | 'кр' | <quantile-regression-phrase> ]? <object-noun> }
+    rule quantile-regression-phrase { <quantile-noun> <regression-noun> }
+    rule the-outliers { <the-determiner> <outliers-noun> }
+    rule time-axis-phrase { <time-noun> <axis-noun> }
+    rule value-axis-phrase { <value-noun> <axis-noun> }
+    rule value-from-left-phrase { <value-noun> <from-proposition> <left-noun> }
+
+}
