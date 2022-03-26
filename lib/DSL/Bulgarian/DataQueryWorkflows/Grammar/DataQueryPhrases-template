@@ -26,7 +26,6 @@ role DSL::Bulgarian::DataQueryWorkflows::Grammar::DataQueryPhrases {
     token inner-adjective { 'вътрешен' | 'вътрешна' | 'вътрешно' }
     token join-noun { 'връзка' | 'съединение' }
     token keep-verb { 'запази' | 'дръж' }
-    token left-adjective { 'ляв' | 'ляво' | 'лява' }
     token long-adjective { 'дълъг' | 'дълга' | 'дълго' }
     token longer-adjective { 'по-дълъг' | 'по-дълга' | 'по-дълго' }
     token map-verb { 'асоциирай' }
@@ -41,7 +40,6 @@ role DSL::Bulgarian::DataQueryWorkflows::Grammar::DataQueryPhrases {
     token order-verb { 'нареди'  }
     token pivot-verb { 'развий' | 'развърни' }
     token rename-verb { 'преименувай' }
-    token right-adjective { 'десен' | 'дясна' | 'дясно' }
     token safe-adjective { 'сигурна' }
     token safely-adverb { 'сигурно' }
     token select-verb { 'избери' }
