@@ -39,6 +39,7 @@ role DSL::Bulgarian::QuantileRegressionWorkflows::Grammar::TimeSeriesAndRegressi
     token outliers-noun { <outlier-noun> | 'извънреди' 'стойности' }
     token probabilities-noun { 'вероятности' }
     token probability-noun { 'вероятност' }
+    token quantile-adjective { 'квантилен' | 'квантилна' |  'квантилно' | 'квантилни' }
     token quantile-noun { 'квантила' }
     token quantiles-noun { 'квантили' }
     token regressand-noun { 'регресанд' }
