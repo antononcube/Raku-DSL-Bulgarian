@@ -19,9 +19,9 @@
     "DSL::Bulgarian::DataQueryWorkflows::Grammar": "lib/DSL/Bulgarian/DataQueryWorkflows/Grammar.rakumod",
     "DSL::Bulgarian::DataQueryWorkflows::Grammar::DataQueryPhrases": "lib/DSL/Bulgarian/DataQueryWorkflows/Grammar/DataQueryPhrases.rakumod",
     "DSL::Bulgarian::LatentSemanticAnalysisWorkflows::Grammar": "lib/DSL/Bulgarian/LatentSemanticAnalysisWorkflows/Grammar.rakumod",
-    "DSL::Bulgarian::LatentSemanticAnalysisWorkflows::Grammar::RecommenderPhrases": "lib/DSL/Bulgarian/LatentSemanticAnalysisWorkflows/Grammar/LatentSemanticAnalysisPhrases.rakumod",
+    "DSL::Bulgarian::LatentSemanticAnalysisWorkflows::Grammar::LatentSemanticAnalysisPhrases": "lib/DSL/Bulgarian/LatentSemanticAnalysisWorkflows/Grammar/LatentSemanticAnalysisPhrases.rakumod",
     "DSL::Bulgarian::QuantileRegressionWorkflows::Grammar": "lib/DSL/Bulgarian/QuantileRegressionWorkflows/Grammar.rakumod",
-    "DSL::Bulgarian::QuantileRegressionWorkflows::Grammar::RecommenderPhrases": "lib/DSL/Bulgarian/QuantileRegressionWorkflows/Grammar/TimeSeriesAndRegressionPhrases.rakumod",
+    "DSL::Bulgarian::QuantileRegressionWorkflows::Grammar::TimeSeriesAndRegressionPhrases": "lib/DSL/Bulgarian/QuantileRegressionWorkflows/Grammar/TimeSeriesAndRegressionPhrases.rakumod",
     "DSL::Bulgarian::RecommenderWorkflows::Grammar": "lib/DSL/Bulgarian/RecommenderWorkflows/Grammar.rakumod",
     "DSL::Bulgarian::RecommenderWorkflows::Grammar::RecommenderPhrases": "lib/DSL/Bulgarian/RecommenderWorkflows/Grammar/RecommenderPhrases.rakumod"
   },
