@@ -67,8 +67,8 @@ ok $pCOMMAND.parse('преименувай passengerAge, passengerClass, и pass
 ok $pCOMMAND.parse('преименувай passengerAge като age, passengerClass като class и passengerSex като sex'),
         'преименувай passengerAge като age, passengerClass като class и passengerSex като sex';
 
-ok $pCOMMAND.parse('захвърли passengerAge, passengerClass, и passengerSex'),
-        'захвърли passengerAge, passengerClass, и passengerSex';
+ok $pCOMMAND.parse('изхвърли passengerAge, passengerClass, и passengerSex'),
+        'изхвърли passengerAge, passengerClass, и passengerSex';
 
 ok $pCOMMAND.parse('трансформирай bmi1 = mass1 и bmi2 = mass2'),
         'трансформирай bmi1 = mass1 и bmi2 = mass2';
