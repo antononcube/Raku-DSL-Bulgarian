@@ -35,8 +35,6 @@ role DSL::Bulgarian::QuantileRegressionWorkflows::Grammar::TimeSeriesAndRegressi
     token moving-adjective { 'движещ' | 'движеща' | 'движещо' | 'движещи' | 'пълзящ' | 'пълзяща' | 'пълзящо' | 'пълзящи' }
     token order-noun { 'порядък' | 'степен' }
     token origin-noun { 'нула' | 'start' }
-    token outlier-noun { 'извънредна' 'стойност' }
-    token outliers-noun { <outlier-noun> | 'извънреди' 'стойности' }
     token probabilities-noun { 'вероятности' }
     token probability-noun { 'вероятност' }
     token quantile-adjective { 'квантилен' | 'квантилна' |  'квантилно' | 'квантилни' }
