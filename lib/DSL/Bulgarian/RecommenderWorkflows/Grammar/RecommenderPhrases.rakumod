@@ -31,8 +31,6 @@ role DSL::Bulgarian::RecommenderWorkflows::Grammar::RecommenderPhrases
     token most-determiner:sym<Bulgarian> { :i 'повечето' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'повечето', 2) }> }
     token nearest-adjective:sym<Bulgarian> { :i  'най' \h* '-' \h* близки  }
     token neighbors-noun:sym<Bulgarian> { :i 'съседи' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'съседи', 2) }> }
-    token outlier-noun:sym<Bulgarian> { :i 'извънредност' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'извънредност', 2) }> | 'извънреден' | ([\w]+) <?{ $0.Str ne 'извънредна' and is-bg-fuzzy-match($0.Str, 'извънреден', 2) }> | 'извънредна' | ([\w]+) <?{ $0.Str ne 'извънреден' and is-bg-fuzzy-match($0.Str, 'извънредна', 2) }> }
-    token outliers-noun:sym<Bulgarian> { :i  'извънредности' | <outlier-noun>  }
     token profile-noun:sym<Bulgarian> { :i 'профил' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'профил', 2) }> }
     token proofs-noun:sym<Bulgarian> { :i 'доказателство' | ([\w]+) <?{ $0.Str ne 'доказателствa' and is-bg-fuzzy-match($0.Str, 'доказателство', 2) }> | 'доказателствa' | ([\w]+) <?{ $0.Str ne 'доказателство' and is-bg-fuzzy-match($0.Str, 'доказателствa', 2) }> | 'свидетелство' | ([\w]+) <?{ $0.Str ne 'свидетелства' and is-bg-fuzzy-match($0.Str, 'свидетелство', 2) }> | 'свидетелства' | ([\w]+) <?{ $0.Str ne 'свидетелство' and is-bg-fuzzy-match($0.Str, 'свидетелства', 2) }> }
     token properties-noun:sym<Bulgarian> { :i 'свойства' | ([\w]+) <?{ $0.Str ne 'свойство' and is-bg-fuzzy-match($0.Str, 'свойства', 2) }> | 'характеристики' | ([\w]+) <?{ $0.Str ne 'характеристика' and is-bg-fuzzy-match($0.Str, 'характеристики', 2) }> }

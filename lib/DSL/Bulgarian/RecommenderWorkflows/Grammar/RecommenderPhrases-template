@@ -31,8 +31,6 @@ role DSL::Bulgarian::RecommenderWorkflows::Grammar::RecommenderPhrases
     token most-determiner { 'повечето' }
     token nearest-adjective { 'най' \h* '-' \h* близки }
     token neighbors-noun { 'съседи' }
-    token outlier-noun { 'извънредност' | 'извънреден' | 'извънредна' }
-    token outliers-noun { 'извънредности' | <outlier-noun> }
     token profile-noun { 'профил' }
     token proofs-noun { 'доказателство' | 'доказателствa' | 'свидетелство' | 'свидетелства' }
     token properties-noun { 'свойства' | 'характеристики' }
