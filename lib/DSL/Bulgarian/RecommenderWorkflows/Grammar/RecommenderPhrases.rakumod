@@ -10,6 +10,8 @@ role DSL::Bulgarian::RecommenderWorkflows::Grammar::RecommenderPhrases
     token word-spec:sym<Bulgarian> { :i  \w+  }
 
     # Regular tokens / rules
+    token across-adverb:sym<Bulgarian> { :i 'напречно' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'напречно', 2) }> }
+    token across-preposition:sym<Bulgarian> { :i 'през' | ([\w]+) <?{ $0.Str !(elem) <чрез праг> and is-bg-fuzzy-match($0.Str, 'през', 2) }> | 'чрез' | ([\w]+) <?{ $0.Str ne 'през' and is-bg-fuzzy-match($0.Str, 'чрез', 2) }> }
     token aggregate-verb:sym<Bulgarian> { :i 'агрегирай' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'агрегирай', 2) }> | 'обедени' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'обедени', 2) }> }
     token aggregation-noun:sym<Bulgarian> { :i 'агрегация' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'агрегация', 2) }> | 'обединение' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'обединение', 2) }> }
     token anomalies-noun:sym<Bulgarian> { :i 'аномалии' | ([\w]+) <?{ $0.Str ne 'аномалия' and is-bg-fuzzy-match($0.Str, 'аномалии', 2) }> }
@@ -48,7 +50,7 @@ role DSL::Bulgarian::RecommenderWorkflows::Grammar::RecommenderPhrases
     token rownames-noun:sym<Bulgarian> { :i 'rownames' | ([\w]+) <?{ $0.Str ne 'colnames' and is-bg-fuzzy-match($0.Str, 'rownames', 2) }> }
     token tag-adjective:sym<Bulgarian> { :i  <tag-noun>  }
     token tag-noun:sym<Bulgarian> { :i 'етикет' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'етикет', 2) }> }
-    token threshold-noun:sym<Bulgarian> { :i 'праг' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'праг', 2) }> }
+    token threshold-noun:sym<Bulgarian> { :i 'праг' | ([\w]+) <?{ $0.Str ne 'през' and is-bg-fuzzy-match($0.Str, 'праг', 2) }> }
     token sub-matrix-noun:sym<Bulgarian> { :i  'под' \h+ '-' \h+ <matrix-noun>  }
     token sub-matrices-noun:sym<Bulgarian> { :i  'под' \h+ '-' \h+ <matrices-noun>  }
 

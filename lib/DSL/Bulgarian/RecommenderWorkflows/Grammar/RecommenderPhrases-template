@@ -10,6 +10,8 @@ role DSL::Bulgarian::RecommenderWorkflows::Grammar::RecommenderPhrases
     token word-spec { \w+ }
 
     # Regular tokens / rules
+    token across-adverb { 'напречно' }
+    token across-preposition { 'през' | 'чрез' }
     token aggregate-verb { 'агрегирай' | 'обедени' }
     token aggregation-noun { 'агрегация' | 'обединение' }
     token anomalies-noun { 'аномалии' }
