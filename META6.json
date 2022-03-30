@@ -16,6 +16,8 @@
   "build-depends": [],
   "test-depends": [],
   "provides": {
+    "DSL::Bulgarian::ClassificationWorkflows::Grammar": "lib/DSL/Bulgarian/ClassificationWorkflows/Grammar.rakumod",
+    "DSL::Bulgarian::ClassificationWorkflows::Grammar::ClassificationPhrases": "lib/DSL/Bulgarian/ClassificationWorkflows/Grammar/ClassificationPhrases.rakumod",
     "DSL::Bulgarian::DataQueryWorkflows::Grammar": "lib/DSL/Bulgarian/DataQueryWorkflows/Grammar.rakumod",
     "DSL::Bulgarian::DataQueryWorkflows::Grammar::DataQueryPhrases": "lib/DSL/Bulgarian/DataQueryWorkflows/Grammar/DataQueryPhrases.rakumod",
     "DSL::Bulgarian::LatentSemanticAnalysisWorkflows::Grammar": "lib/DSL/Bulgarian/LatentSemanticAnalysisWorkflows/Grammar.rakumod",

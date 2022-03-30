@@ -1,0 +1,50 @@
+use v6;
+
+use DSL::Shared::Roles::Bulgarian::PipelineCommand;
+use DSL::Shared::Utilities::DeterminedWordsMatching;
+
+# Data query specific phrases
+role DSL::Bulgarian::ClassificationWorkflows::Grammar::ClassificationPhrases
+        does DSL::Shared::Roles::Bulgarian::PipelineCommand {
+    # Tokens
+    token accuracy-noun { 'прецизност' }
+    token accuracies-noun { 'прецизности' }
+    token available-adjective { 'налични' }
+    token characteristic-noun { 'харакетеристика' }
+    token characteristics-noun { 'харакетеристики' }
+    token class-adjective { 'класов' | 'класова' | 'класово' | 'класови' }
+    token class-noun { 'клас' }
+    token classes-noun { 'класове' }
+    token classification-noun { 'классификация' }
+    token classifier-adjective { 'класификаторен' | 'класификаторна' | 'класификаторно' | 'класификаторни' }
+    token classifier-noun { 'класификатор' }
+    token classifiers-noun { 'класификатори' }
+    token ensemble-noun { 'ансамбъл' }
+    token estimates-noun { 'оценки' }
+    token fraction-noun { 'дробна'? 'част' }
+    token importance-adjective { 'важен' | 'важна' | 'важно' | 'важни' }
+    token importance-noun { 'важност' }
+    token info-noun { 'инфо' }
+    token information-noun { 'информация' }
+    token label-noun { 'етикет' }
+    token line-noun { 'линия' }
+    token measurement-noun { 'мярка' }
+    token measurements-noun { 'мерки' }
+    token operating-adjective { 'операционен' | 'операционна' | 'операционно' | 'операционни' | 'работен' | 'работна' | 'работно' | 'работни' }
+    token proportional-adjective { 'пропорционален' | 'пропорционална' | 'пропорционално' | 'пропорционални' }
+    token ratio-noun { 'пропорция' | 'съотношение' }
+    token receiver-noun { 'приемник' }
+    token resampling-noun { 'ресемплирай' }
+    token roc-noun { 'рхп' }
+    token rocs-noun { 'рхп' }
+    token shuffling-noun { 'смесване' | 'разбъркване' }
+    token split-adjective { 'цепещ' | 'цепеща' | 'цепещо' | 'цепещи' | 'делящ' | 'деляща' | 'делящо' | 'делящи' }
+    token split-directive { 'дели' | 'раздели' | 'сцепи' | 'цепи' }
+    token test-verb { 'тествай' }
+    token testing-adjective { 'тестващ' | 'тестваща' | 'тестващо' | 'тестващи' }
+    token threshold-noun { 'праг' }
+    token train-verb { 'тренирай' }
+    token training-adjective { 'тренироващ' | 'тренироваща' | 'тренироващо' | 'тренироващи' | 'тренировачен' | 'тренировачна' | 'тренировачно' | 'тренировачни' }
+    token validation-adjective { 'валидационен' | 'валидационна' | 'валидационно' | 'валидационни' | 'валидиращ' | 'валидираща' | 'валидиращо' | 'валидиращи'}
+
+}
