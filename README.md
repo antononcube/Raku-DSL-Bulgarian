@@ -12,9 +12,7 @@ Translation to other natural languages is also done: English, Korean, Russian, S
 
 ------
 
-## Examples
-
-### Data query (wrangling) workflows
+## Data query (wrangling) workflows
 
 ```perl6
 use DSL::English::DataQueryWorkflows;
@@ -23,7 +21,7 @@ my $command = '
 зареди данните iris;
 вземи елементите от 1 до 120;
 групирай с колоната Species;
-покажи броевете
+покажи размерите
 ';
 for <English Python::pandas Raku::Reshapers Russian> -> $t {
     say '=' x 60, "\n", $t, "\n", '-' x 60;
@@ -63,6 +61,217 @@ for <English Python::pandas Raku::Reshapers Russian> -> $t {
 
 -------
 
+```perl6
+use DSL::English::RecommenderWorkflows;
+
+my $command = '
+създай чрез dfTitanic;
+препоръчай със профила "male" и "died";
+покажи текущата лентова стойност
+';
+
+for <English Python::SMRMon R::SMRMon Russian> -> $t {
+    say '=' x 60, "\n", $t, "\n", '-' x 60;
+    say ToRecommenderWorkflowCode($command, $t, language => 'Bulgarian', format => 'code');
+}
+```
+```
+# ============================================================
+# English
+# ------------------------------------------------------------
+# create with data table: dfTitanic
+# recommend with the profile: ["male", "died"]
+# echo the pipeline value
+# ============================================================
+# Python::SMRMon
+# ------------------------------------------------------------
+# obj = SparseMatrixRecommender().create_from_wide_form( data = dfTitanic).recommend_by_profile( profile = ["male", "died"]).echo_value()
+# ============================================================
+# R::SMRMon
+# ------------------------------------------------------------
+# SMRMonCreate( data = dfTitanic) %>%
+# SMRMonRecommendByProfile( profile = c("male", "died")) %>%
+# SMRMonEchoValue()
+# ============================================================
+# Russian
+# ------------------------------------------------------------
+# создать с таблицу: dfTitanic
+# рекомендуй с профилю: ["male", "died"]
+# показать текущее значение ленту
+```
+
+-------
+
+## Latent Semantic Analysis
+
+```perl6
+use DSL::English::LatentSemanticAnalysisWorkflows;
+
+my $command = '
+създай със textHamlet;
+направи документ-термин матрица със автоматични стоп думи;
+приложи LSI функциите IDF, TermFrequency, и Cosine;
+извади 12 теми чрез NNMF и максимален брой стъпки 12;
+покажи таблица  на темите с 12 термина;
+покажи текущата лентова стойност
+';
+
+for <English Python::LSAMon R::LSAMon Russian> -> $t {
+    say '=' x 60, "\n", $t, "\n", '-' x 60;
+    say ToLatentSemanticAnalysisWorkflowCode($command, $t, language => 'Bulgarian', format => 'code');
+}
+```
+```
+# ============================================================
+# English
+# ------------------------------------------------------------
+# create LSA object with the data: textHamlet
+# make the document-term matrix with the parameters: use the stop words: NULL
+# apply the latent semantic analysis (LSI) functions: global weight function : "IDF", local weight function : "None", normalizer function : "Cosine"
+# extract 12 topics using the parameters: method : Non-Negative Matrix Factorization (NNMF), max number of steps : 12
+# show topics table using the parameters: numberOfTerms = 12)
+# show the pipeline value
+# ============================================================
+# Python::LSAMon
+# ------------------------------------------------------------
+# (LatentSemanticAnalyzer(textHamlet)
+#    .make_document_term_matrix( stop_words = None)
+#    .apply_term_weight_functions(global_weight_func = "IDF", local_weight_func = "None", normalizer_func = "Cosine")
+#    .extract_topics(number_of_topics = 12, method = "NNMF", max_steps = 12)
+#    .echo_topics_table(numberOfTerms = 12)
+#    .echo_value())
+# ============================================================
+# R::LSAMon
+# ------------------------------------------------------------
+# LSAMonUnit(textHamlet) %>%
+# LSAMonMakeDocumentTermMatrix( stopWords = NULL) %>%
+# LSAMonApplyTermWeightFunctions(globalWeightFunction = "IDF", localWeightFunction = "None", normalizerFunction = "Cosine") %>%
+# LSAMonExtractTopics( numberOfTopics = 12, method = "NNMF",  maxSteps = 12) %>%
+# LSAMonEchoTopicsTable(numberOfTerms = 12) %>%
+# LSAMonEchoValue()
+# ============================================================
+# Russian
+# ------------------------------------------------------------
+# создать латентный семантический анализатор с данных: textHamlet
+# сделать матрицу документов-терминов с параметрами: стоп-слова: null
+# применять функции латентного семантического индексирования (LSI): глобальная весовая функция: "IDF", локальная весовая функция: "None", нормализующая функция: "Cosine"
+# извлечь 12 тем с параметрами: метод: Разложение Неотрицательных Матричных Факторов (NNMF), максимальное число шагов: 12
+# показать таблицу темы по параметрам: numberOfTerms = 12
+# показать текущее значение конвейера
+```
+
+-------
+
+## Quantile Regression Workflows
+
+```perl6
+use DSL::English::QuantileRegressionWorkflows;
+
+my $command = '
+създай с dfTemperatureData;
+премахни липсващите стойности;
+покажи данново обобщение;
+премащабирай двете оси;
+изчисли квантилна регресия с 20 възела и вероятности от 0.1 до 0.9 със стъпка 0.1;
+покажи диаграма с дати;
+покажи чертеж на абсолютните грешки;
+покажи текущата лентова стойност
+';
+
+for <English R::QRMon Russian WL::QRMon> -> $t {
+    say '=' x 60, "\n", $t, "\n", '-' x 60;
+    say ToQuantileRegressionWorkflowCode($command, $t, language => 'Bulgarian', format => 'code');
+}
+```
+```
+# ============================================================
+# English
+# ------------------------------------------------------------
+# create quantile regression object with the data: dfTemperatureData
+# delete missing values
+# show data summary
+# rescale: over both regressor and value axes
+# compute quantile regression with parameters: degrees of freedom (knots): 20, automatic probabilities
+# show plot with parameters: use date axis
+# show plot of relative errors
+# show the pipeline value
+# ============================================================
+# R::QRMon
+# ------------------------------------------------------------
+# QRMonUnit( data = dfTemperatureData) %>%
+# QRMonDeleteMissing() %>%
+# QRMonEchoDataSummary() %>%
+# QRMonRescale(regressorAxisQ = TRUE, valueAxisQ = TRUE) %>%
+# QRMonQuantileRegression(df = 20, probabilities = seq(0.1, 0.9, 0.1)) %>%
+# QRMonPlot( datePlotQ = TRUE) %>%
+# QRMonErrorsPlot( relativeErrorsQ = TRUE) %>%
+# QRMonEchoValue()
+# ============================================================
+# Russian
+# ------------------------------------------------------------
+# создать объект квантильной регрессии с данными: dfTemperatureData
+# удалить пропущенные значения
+# показать сводку данных
+# перемасштабировать: по осям регрессии и значений
+# рассчитать квантильную регрессию с параметрами: степени свободы (узлы): 20, автоматическими вероятностями
+# показать диаграмму с параметрами: использованием оси дат
+# показать диаграму на относительных ошибок
+# показать текущее значение конвейера
+# ============================================================
+# WL::QRMon
+# ------------------------------------------------------------
+# QRMonUnit[dfTemperatureData] \[DoubleLongRightArrow]
+# QRMonDeleteMissing[] \[DoubleLongRightArrow]
+# QRMonEchoDataSummary[] \[DoubleLongRightArrow]
+# QRMonRescale["Axes"->{True, True}] \[DoubleLongRightArrow]
+# QRMonQuantileRegression["Knots" -> 20, "Probabilities" -> Range[0.1, 0.9, 0.1]] \[DoubleLongRightArrow]
+# QRMonDateListPlot[] \[DoubleLongRightArrow]
+# QRMonErrorPlots[ "RelativeErrors" -> True] \[DoubleLongRightArrow]
+# QRMonEchoValue[]
+```
+
+-------
+
+## Classification workflows
+
+```perl6
+use DSL::English::ClassificationWorkflows;
+
+my $command = '
+използвай dfTitanic;
+раздели данните с цепещо съотношение 0.82;
+направи gradient boosted trees класификатор;
+';
+
+for <English Russian WL::ClCon> -> $t {
+    say '=' x 60, "\n", $t, "\n", '-' x 60;
+    say ToClassificationWorkflowCode($command, $t, language => 'Bulgarian', format => 'code');
+}
+```
+```
+# ============================================================
+# English
+# ------------------------------------------------------------
+# use the data: dfTitanic 
+# split into training and testing data with the proportion 0.82 
+# train classifier with method: gradient boosted trees
+# ============================================================
+# Russian
+# ------------------------------------------------------------
+# использовать данные: dfTitanic 
+# разделить данные на пропорцию 0.82 
+# обучить классификатор методом: gradient boosted trees
+# ============================================================
+# WL::ClCon
+# ------------------------------------------------------------
+# ClConUnit[ dfTitanic ] \[DoubleLongRightArrow]
+# ClConSplitData[ 0.82 ] \[DoubleLongRightArrow]
+# ClConMakeClassifier[  ]
+```
+
+
+-------
+
 ## Implementation notes
 
 The rules in the file
@@ -95,8 +304,10 @@ it became clear that there are several directives to follow:
 2. Adhere to of the [Eric Raymond's 17 Unix Rules](https://en.wikipedia.org/wiki/Unix_philosophy), [Wk1]:
    - *Make data complicated when required, not the program*
    - *Write abstract programs that generate code instead of writing code by hand*
-  
-For the "from Bulgarian" project the package 
+
+In order to facilitate the  "from Bulgarian" project the package "Grammar::TokenProcessing", [AAp3],
+was "finalized." The initial versions of that package were used from the very beginning of the
+DSLs grammar development in order to facilitate handling of misspellings.
 
 ### (Current) recipe
 
