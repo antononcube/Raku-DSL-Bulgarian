@@ -12,9 +12,7 @@ Translation to other natural languages is also done: English, Korean, Russian, S
 
 ------
 
-## Examples
-
-### Data query (wrangling) workflows
+## Data query (wrangling) workflows
 
 ```perl6
 use DSL::English::DataQueryWorkflows;
@@ -23,13 +21,96 @@ my $command = '
 зареди данните iris;
 вземи елементите от 1 до 120;
 групирай с колоната Species;
-покажи броевете
+покажи размерите
 ';
 for <English Python::pandas Raku::Reshapers Russian> -> $t {
     say '=' x 60, "\n", $t, "\n", '-' x 60;
     say ToDataQueryWorkflowCode($command, $t, language => 'Bulgarian', format => 'code');
 }
 ```
+
+-------
+
+```perl6
+use DSL::English::RecommenderWorkflows;
+
+my $command = '
+създай чрез dfTitanic;
+препоръчай със профила "male" и "died";
+покажи текущата лентова стойност
+';
+
+for <English Python::SMRMon R::SMRMon Russian> -> $t {
+    say '=' x 60, "\n", $t, "\n", '-' x 60;
+    say ToRecommenderWorkflowCode($command, $t, language => 'Bulgarian', format => 'code');
+}
+```
+
+-------
+
+## Latent Semantic Analysis
+
+```perl6
+use DSL::English::LatentSemanticAnalysisWorkflows;
+
+my $command = '
+създай със textHamlet;
+направи документ-термин матрица със автоматични стоп думи;
+приложи LSI функциите IDF, TermFrequency, и Cosine;
+извади 12 теми чрез NNMF и максимален брой стъпки 12;
+покажи таблица  на темите с 12 термина;
+покажи текущата лентова стойност
+';
+
+for <English Python::LSAMon R::LSAMon Russian> -> $t {
+    say '=' x 60, "\n", $t, "\n", '-' x 60;
+    say ToLatentSemanticAnalysisWorkflowCode($command, $t, language => 'Bulgarian', format => 'code');
+}
+```
+
+-------
+
+## Quantile Regression Workflows
+
+```perl6
+use DSL::English::QuantileRegressionWorkflows;
+
+my $command = '
+създай с dfTemperatureData;
+премахни липсващите стойности;
+покажи данново обобщение;
+премащабирай двете оси;
+изчисли квантилна регресия с 20 възела и вероятности от 0.1 до 0.9 със стъпка 0.1;
+покажи диаграма с дати;
+покажи чертеж на абсолютните грешки;
+покажи текущата лентова стойност
+';
+
+for <English R::QRMon Russian WL::QRMon> -> $t {
+    say '=' x 60, "\n", $t, "\n", '-' x 60;
+    say ToQuantileRegressionWorkflowCode($command, $t, language => 'Bulgarian', format => 'code');
+}
+```
+
+-------
+
+## Classification workflows
+
+```perl6
+use DSL::English::ClassificationWorkflows;
+
+my $command = '
+използвай dfTitanic;
+раздели данните с цепещо съотношение 0.82;
+направи gradient boosted trees класификатор;
+';
+
+for <English Russian WL::ClCon> -> $t {
+    say '=' x 60, "\n", $t, "\n", '-' x 60;
+    say ToClassificationWorkflowCode($command, $t, language => 'Bulgarian', format => 'code');
+}
+```
+
 
 -------
 
@@ -65,8 +146,10 @@ it became clear that there are several directives to follow:
 2. Adhere to of the [Eric Raymond's 17 Unix Rules](https://en.wikipedia.org/wiki/Unix_philosophy), [Wk1]:
    - *Make data complicated when required, not the program*
    - *Write abstract programs that generate code instead of writing code by hand*
-  
-For the "from Bulgarian" project the package 
+
+In order to facilitate the  "from Bulgarian" project the package "Grammar::TokenProcessing", [AAp3],
+was "finalized." The initial versions of that package were used from the very beginning of the
+DSLs grammar development in order to facilitate handling of misspellings.
 
 ### (Current) recipe
 
