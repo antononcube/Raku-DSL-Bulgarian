@@ -17,42 +17,46 @@ Translation to other natural languages is also done: English, Korean, Russian, S
 ### Data query (wrangling) workflows
 
 ```perl6
-use DSL::General::DataQueryWorkflows;
-use DSL::Bulgarian::DataQueryWorkflows::Grammar;
+use DSL::English::DataQueryWorkflows;
 
 my $command = '
 зареди данните iris;
+вземи елементите от 1 до 120;
 групирай с колоната Species;
 покажи броевете
 ';
 for <English Python::pandas Raku::Reshapers Russian> -> $t {
     say '=' x 60, "\n", $t, "\n", '-' x 60;
-    say ToDataQueryWorkflowCode($command, $t, lang => 'Bulgarian', format => 'code');
+    say ToDataQueryWorkflowCode($command, $t, language => 'Bulgarian', format => 'code');
 }
 ```
 ```
 # ============================================================
 # English
 # ------------------------------------------------------------
-# load the data table: \"iris\"
+# load the data table: "iris"
+# take elements from 1 to 120
 # group by the columns: Species
 # show the count(s)
 # ============================================================
 # Python::pandas
 # ------------------------------------------------------------
 # obj = example_dataset('iris')
+# obj.iloc[1-1:120]
 # obj = obj.groupby(["Species"])
 # print(obj.size())
 # ============================================================
 # Raku::Reshapers
 # ------------------------------------------------------------
 # my $obj = example-dataset('iris') ;
+# $obj = $obj[ (1 - 1) ... (120 - 1 ) ] ;
 # $obj = group-by( $obj, "Species") ;
 # say "counts: ", $obj>>.elems
 # ============================================================
 # Russian
 # ------------------------------------------------------------
-# загрузить таблицу: \"iris\"
+# загрузить таблицу: "iris"
+# взять элементы с 1 по 120
 # групировать с колонками: Species
 # показать число
 ```
@@ -176,7 +180,7 @@ Here are the steps:
 [GitHub/antononcube](https://github.com/antononcube).
 
 [AAp4] Anton Antonov,
-[DSL::General::DataQueryWorkflows, Raku package](https://github.com/antononcube/Raku-DSL-General-DataQueryWorkflows),
+[DSL::English::DataQueryWorkflows, Raku package](https://github.com/antononcube/Raku-DSL-General-DataQueryWorkflows),
 (2022),
 [GitHub/antononcube](https://github.com/antononcube).
 
