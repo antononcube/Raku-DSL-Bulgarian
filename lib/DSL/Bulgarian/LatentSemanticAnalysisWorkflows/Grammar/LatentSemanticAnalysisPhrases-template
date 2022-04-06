@@ -33,7 +33,7 @@ role DSL::Bulgarian::LatentSemanticAnalysisWorkflows::Grammar::LatentSemanticAna
     token synonyms-noun { 'синоними' }
     token term-noun { 'термин' }
     token terms-noun { 'термини' }
-    token thesaurus-noun { 'тълковен' \h+ 'речник' | 'тълковник' }
+    token thesaurus-noun { <dictionary-noun> | <interpreter-noun> | <interpreting-adjective> \h+ <dictionary-noun> }
     token topic-noun { 'тема' }
     token topics-noun { 'теми' }
 
