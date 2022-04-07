@@ -12,7 +12,6 @@ role DSL::Bulgarian::DataQueryWorkflows::Grammar::DataQueryPhrases {
     token combine-verb:sym<Bulgarian> { :i 'комбинирай' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'комбинирай', 2) }> }
     token cross-verb:sym<Bulgarian> { :i 'кръстосана' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'кръстосана', 2) }> }
     token descending-adjective:sym<Bulgarian> { :i 'низходящ' | ([\w]+) <?{ $0.Str ne 'възходящ' and is-bg-fuzzy-match($0.Str, 'низходящ', 2) }> }
-    token dictionary-noun:sym<Bulgarian> { :i 'речник' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'речник', 2) }> }
     token distinct-adjective:sym<Bulgarian> { :i 'уникален' | ([\w]+) <?{ $0.Str ne 'уникални' and is-bg-fuzzy-match($0.Str, 'уникален', 2) }> | 'уникални' | ([\w]+) <?{ $0.Str ne 'уникален' and is-bg-fuzzy-match($0.Str, 'уникални', 2) }> }
     token divider-noun:sym<Bulgarian> { :i 'разделител' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'разделител', 2) }> }
     token duplicate-adjective:sym<Bulgarian> { :i 'дублиран' | ([\w]+) <?{ $0.Str ne 'дублирани' and is-bg-fuzzy-match($0.Str, 'дублиран', 2) }> | 'повторен' | ([\w]+) <?{ $0.Str ne 'повторени' and is-bg-fuzzy-match($0.Str, 'повторен', 2) }> }

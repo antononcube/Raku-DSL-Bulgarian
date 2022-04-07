@@ -12,7 +12,6 @@ role DSL::Bulgarian::DataQueryWorkflows::Grammar::DataQueryPhrases {
     token combine-verb { 'комбинирай' }
     token cross-verb { 'кръстосана' }
     token descending-adjective { 'низходящ' }
-    token dictionary-noun { 'речник' }
     token distinct-adjective { 'уникален' | 'уникални' }
     token divider-noun { 'разделител' }
     token duplicate-adjective { 'дублиран' | 'повторен' }
