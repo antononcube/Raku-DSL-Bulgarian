@@ -58,7 +58,7 @@ role DSL::Bulgarian::RecommenderWorkflows::Grammar::RecommenderPhrases
     rule consumption-history { <consumption-slot>? <history-noun> }
     rule consumption-profile { <consumption-slot>? <profile-noun> }
     rule cross-tabulate-phrase { 'cross' [ 'tabulate' | 'tabulation' ] }
-    rule extend-recommendations-phrase { [ <extend-verb> | <join-verb> 'across'? ] <recommendations-noun>? }
+    rule extend-recommendations-phrase { <across-adverb> <join-noun> <recommendations-noun>? }
     rule history-phrase { [ <item-noun> ]? <history-noun> }
     rule most-relevant { <most-determiner> <relevant-adjective> }
     rule nearest-neighbors { <nearest-adjective> <neighbors-noun> | 'nns' }
