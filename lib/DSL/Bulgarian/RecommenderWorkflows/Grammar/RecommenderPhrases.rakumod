@@ -39,33 +39,33 @@ role DSL::Bulgarian::RecommenderWorkflows::Grammar::RecommenderPhrases
     token property-noun:sym<Bulgarian> { :i 'свойство' | ([\w]+) <?{ $0.Str ne 'свойства' and is-bg-fuzzy-match($0.Str, 'свойство', 2) }> | 'характеристика' | ([\w]+) <?{ $0.Str ne 'характеристики' and is-bg-fuzzy-match($0.Str, 'характеристика', 2) }> }
     token prove-verb:sym<Bulgarian> { :i 'докажи' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'докажи', 2) }> }
     token proximity-noun:sym<Bulgarian> { :i 'близост' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'близост', 2) }> }
-    token recommend-directive:sym<Bulgarian> { :i  <recommend-verb>  }
-    token recommend-verb:sym<Bulgarian> { :i 'препоръчай' | ([\w]+) <?{ $0.Str !(elem) <препоръчка препоръка препоръчки препоръчан препоръчана> and is-bg-fuzzy-match($0.Str, 'препоръчай', 2) }> | 'внуши' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'внуши', 2) }> }
+    token recommend-directive:sym<Bulgarian> { :i <recommend-verb> }
+    token recommend-verb:sym<Bulgarian> { :i 'препоръчай' | ([\w]+) <?{ $0.Str !(elem) <препоръчка препоръка препоръчки препоръчан препоръчана препоръчани> and is-bg-fuzzy-match($0.Str, 'препоръчай', 2) }> | 'внуши' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'внуши', 2) }> }
     token recommendation-noun:sym<Bulgarian> { :i 'препоръчка' | ([\w]+) <?{ $0.Str !(elem) <препоръчай препоръка препоръчки препоръки препоръчан препоръчана> and is-bg-fuzzy-match($0.Str, 'препоръчка', 2) }> | 'препоръка' | ([\w]+) <?{ $0.Str !(elem) <препоръчай препоръчка препоръчки препоръки препоръчан> and is-bg-fuzzy-match($0.Str, 'препоръка', 2) }> }
-    token recommendations-noun:sym<Bulgarian> { :i 'препоръчки' | ([\w]+) <?{ $0.Str !(elem) <препоръчай препоръчка препоръка препоръки препоръчан> and is-bg-fuzzy-match($0.Str, 'препоръчки', 2) }> | 'препоръки' | ([\w]+) <?{ $0.Str !(elem) <препоръчка препоръка препоръчки> and is-bg-fuzzy-match($0.Str, 'препоръки', 2) }> }
-    token recommended-adjective:sym<Bulgarian> { :i 'препоръчан' | ([\w]+) <?{ $0.Str !(elem) <препоръчай препоръчка препоръка препоръчки препоръчана препоръчено> and is-bg-fuzzy-match($0.Str, 'препоръчан', 2) }> | 'препоръчана' | ([\w]+) <?{ $0.Str !(elem) <препоръчай препоръчка препоръчан препоръчено> and is-bg-fuzzy-match($0.Str, 'препоръчана', 2) }> | 'препоръчено' | ([\w]+) <?{ $0.Str !(elem) <препоръчан препоръчана> and is-bg-fuzzy-match($0.Str, 'препоръчено', 2) }> }
+    token recommendations-noun:sym<Bulgarian> { :i 'препоръчки' | ([\w]+) <?{ $0.Str !(elem) <препоръчай препоръчка препоръка препоръки препоръчан препоръчани> and is-bg-fuzzy-match($0.Str, 'препоръчки', 2) }> | 'препоръки' | ([\w]+) <?{ $0.Str !(elem) <препоръчка препоръка препоръчки> and is-bg-fuzzy-match($0.Str, 'препоръки', 2) }> }
+    token recommended-adjective:sym<Bulgarian> { :i 'препоръчан' | ([\w]+) <?{ $0.Str !(elem) <препоръчай препоръчка препоръка препоръчки препоръчана препоръчено препоръчани> and is-bg-fuzzy-match($0.Str, 'препоръчан', 2) }> | 'препоръчана' | ([\w]+) <?{ $0.Str !(elem) <препоръчай препоръчка препоръчан препоръчено препоръчани> and is-bg-fuzzy-match($0.Str, 'препоръчана', 2) }> | 'препоръчено' | ([\w]+) <?{ $0.Str !(elem) <препоръчан препоръчана препоръчани> and is-bg-fuzzy-match($0.Str, 'препоръчено', 2) }> | 'препоръчани' | ([\w]+) <?{ $0.Str !(elem) <препоръчай препоръчки препоръчан препоръчана препоръчено> and is-bg-fuzzy-match($0.Str, 'препоръчани', 2) }> }
     token recommender-noun:sym<Bulgarian> { :i 'препоръчител' | ([\w]+) <?{ $0.Str ne 'препоръчителка' and is-bg-fuzzy-match($0.Str, 'препоръчител', 2) }> | 'препоръчителка' | ([\w]+) <?{ $0.Str ne 'препоръчител' and is-bg-fuzzy-match($0.Str, 'препоръчителка', 2) }> }
     token relevant-adjective:sym<Bulgarian> { :i 'подходящ' | ([\w]+) <?{ $0.Str ne 'подходяща' and is-bg-fuzzy-match($0.Str, 'подходящ', 2) }> | 'подходяща' | ([\w]+) <?{ $0.Str ne 'подходящ' and is-bg-fuzzy-match($0.Str, 'подходяща', 2) }> }
     token row-noun:sym<Bulgarian> { :i 'редица' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'редица', 2) }> }
     token rownames-noun:sym<Bulgarian> { :i 'rownames' | ([\w]+) <?{ $0.Str ne 'colnames' and is-bg-fuzzy-match($0.Str, 'rownames', 2) }> }
-    token tag-adjective:sym<Bulgarian> { :i  <tag-noun>  }
+    token tag-adjective:sym<Bulgarian> { :i <tag-noun> }
     token tag-noun:sym<Bulgarian> { :i 'етикет' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'етикет', 2) }> }
     token threshold-noun:sym<Bulgarian> { :i 'праг' | ([\w]+) <?{ $0.Str ne 'през' and is-bg-fuzzy-match($0.Str, 'праг', 2) }> }
     token sub-matrix-noun:sym<Bulgarian> { :i  'под' \h+ '-' \h+ <matrix-noun>  }
     token sub-matrices-noun:sym<Bulgarian> { :i  'под' \h+ '-' \h+ <matrices-noun>  }
 
-    rule prove-directive:sym<Bulgarian> {  <prove-verb> | <explain-verb>  }
+    rule prove-directive:sym<Bulgarian> { <prove-verb> | <explain-verb> }
     rule consumption-history:sym<Bulgarian> {  <consumption-slot>? <history-noun>  }
     rule consumption-profile:sym<Bulgarian> {  <consumption-slot>? <profile-noun>  }
     rule cross-tabulate-phrase:sym<Bulgarian> {  'cross' [ 'tabulate' | 'tabulation' ]  }
-    rule extend-recommendations-phrase:sym<Bulgarian> { <across-adverb> <join-noun> <recommendations-noun>? }
+    rule extend-recommendations-phrase:sym<Bulgarian> {  <across-adverb> <join-noun> <recommendations-noun>?  }
     rule history-phrase:sym<Bulgarian> {  [ <item-noun> ]? <history-noun>  }
     rule most-relevant:sym<Bulgarian> {  <most-determiner> <relevant-adjective>  }
     rule nearest-neighbors:sym<Bulgarian> {  <nearest-adjective> <neighbors-noun> | 'nns'  }
     rule recommendation-matrices:sym<Bulgarian> {  [ <recommendation-noun> | <recommender-noun> ]? <matrices-noun>  }
     rule recommendation-matrix:sym<Bulgarian> {  [ <recommendation-noun> | <recommender-noun> ]? <matrix-noun>  }
-    rule recommendation-results:sym<Bulgarian> {  [ <recommendation-noun> | <recommendations-noun> | 'recommendation\'s' ] <results>  }
-    rule recommended-items:sym<Bulgarian> {  <recommended-adjective> <items-slot> | [ <recommendations-noun> | <recommendation-noun> ]    <.results>?     }
+    rule recommendation-results:sym<Bulgarian> {  [ <recommendation-noun> | <recommendations-noun> | <recommended-adjective> ] <results>  }
+    rule recommended-items { <recommended-adjective> <items-slot> | [ <recommendations-noun> | <recommendation-noun> ]  <.results>? }
     rule recommender-object-phrase:sym<Bulgarian> {  <recommender-noun> [ <object-noun> | <system-noun> ]? | 'smr'  }
     rule sparse-matrix:sym<Bulgarian> {  <sparse-adjective> <matrix-noun>  }
     rule sub-matrices-phrase:sym<Bulgarian> {  <sub-matrices-noun> | <sub-prefix> <matrices-noun> | <sub-prefix> <matrixes-noun>  }
@@ -93,10 +93,10 @@ role DSL::Bulgarian::RecommenderWorkflows::Grammar::RecommenderPhrases
 
     # LSI specific
     token frequency-noun:sym<Bulgarian> { :i 'честота' | ([\w]+) <?{ $0.Str ne 'гъстота' and is-bg-fuzzy-match($0.Str, 'честота', 2) }> }
-    token global-adjective:sym<Bulgarian> { :i 'глобален' | ([\w]+) <?{ $0.Str !(elem) <глобално локален> and is-bg-fuzzy-match($0.Str, 'глобален', 2) }> | 'глобално' | ([\w]+) <?{ $0.Str !(elem) <глобален локално> and is-bg-fuzzy-match($0.Str, 'глобално', 2) }> }
-    token inverse-adjective:sym<Bulgarian> { :i 'обратент' | ([\w]+) <?{ $0.Str ne 'обратно' and is-bg-fuzzy-match($0.Str, 'обратент', 2) }> | 'обратно' | ([\w]+) <?{ $0.Str ne 'обратент' and is-bg-fuzzy-match($0.Str, 'обратно', 2) }> }
-    token local-adjective:sym<Bulgarian> { :i 'локален' | ([\w]+) <?{ $0.Str !(elem) <глобален локално> and is-bg-fuzzy-match($0.Str, 'локален', 2) }> | 'локално' | ([\w]+) <?{ $0.Str !(elem) <глобално локален> and is-bg-fuzzy-match($0.Str, 'локално', 2) }> }
-    token normalization-noun:sym<Bulgarian> { :i 'номализация' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'номализация', 2) }> | 'нормализиране' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'нормализиране', 2) }> }
+    token global-adjective:sym<Bulgarian> { :i 'глобален' | ([\w]+) <?{ $0.Str !(elem) <глобална глобално глобални локален> and is-bg-fuzzy-match($0.Str, 'глобален', 2) }> | 'глобална' | ([\w]+) <?{ $0.Str !(elem) <глобален глобално глобални локална> and is-bg-fuzzy-match($0.Str, 'глобална', 2) }> | 'глобално' | ([\w]+) <?{ $0.Str !(elem) <глобален глобална глобални локално> and is-bg-fuzzy-match($0.Str, 'глобално', 2) }> | 'глобални' | ([\w]+) <?{ $0.Str !(elem) <глобален глобална глобално локални> and is-bg-fuzzy-match($0.Str, 'глобални', 2) }> }
+    token inverse-adjective:sym<Bulgarian> { :i 'обратент' | ([\w]+) <?{ $0.Str !(elem) <обратна обратно обратни> and is-bg-fuzzy-match($0.Str, 'обратент', 2) }> | 'обратна' | ([\w]+) <?{ $0.Str !(elem) <обратент обратно обратни> and is-bg-fuzzy-match($0.Str, 'обратна', 2) }> | 'обратно' | ([\w]+) <?{ $0.Str !(elem) <обратент обратна обратни> and is-bg-fuzzy-match($0.Str, 'обратно', 2) }> | 'обратни' | ([\w]+) <?{ $0.Str !(elem) <обратент обратна обратно> and is-bg-fuzzy-match($0.Str, 'обратни', 2) }> }
+    token local-adjective:sym<Bulgarian> { :i 'локален' | ([\w]+) <?{ $0.Str !(elem) <глобален локална локално локални> and is-bg-fuzzy-match($0.Str, 'локален', 2) }> | 'локална' | ([\w]+) <?{ $0.Str !(elem) <глобална локален локално локални> and is-bg-fuzzy-match($0.Str, 'локална', 2) }> | 'локално' | ([\w]+) <?{ $0.Str !(elem) <глобално локален локална локални> and is-bg-fuzzy-match($0.Str, 'локално', 2) }> | 'локални' | ([\w]+) <?{ $0.Str !(elem) <глобални локален локална локално> and is-bg-fuzzy-match($0.Str, 'локални', 2) }> }
+    token normalization-noun:sym<Bulgarian> { :i 'нормализация' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'нормализация', 2) }> | 'нормализиране' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'нормализиране', 2) }> }
     token normalizer-noun:sym<Bulgarian> { :i 'нормализатор' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'нормализатор', 2) }> }
     token normalizing-noun:sym<Bulgarian> { :i 'нормализиране' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'нормализиране', 2) }> }
 

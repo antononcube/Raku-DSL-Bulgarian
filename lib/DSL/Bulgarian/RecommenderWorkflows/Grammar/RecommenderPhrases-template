@@ -43,7 +43,7 @@ role DSL::Bulgarian::RecommenderWorkflows::Grammar::RecommenderPhrases
     token recommend-verb { 'препоръчай' | 'внуши' }
     token recommendation-noun { 'препоръчка' | 'препоръка' }
     token recommendations-noun {  'препоръчки' | 'препоръки' }
-    token recommended-adjective { 'препоръчан' | 'препоръчана' | 'препоръчено' }
+    token recommended-adjective { 'препоръчан' | 'препоръчана' | 'препоръчено' | 'препоръчани' }
     token recommender-noun { 'препоръчител' | 'препоръчителка' }
     token relevant-adjective { 'подходящ' | 'подходяща' }
     token row-noun { 'редица' }
@@ -64,8 +64,8 @@ role DSL::Bulgarian::RecommenderWorkflows::Grammar::RecommenderPhrases
     rule nearest-neighbors { <nearest-adjective> <neighbors-noun> | 'nns' }
     rule recommendation-matrices { [ <recommendation-noun> | <recommender-noun> ]? <matrices-noun> }
     rule recommendation-matrix { [ <recommendation-noun> | <recommender-noun> ]? <matrix-noun> }
-    rule recommendation-results { [ <recommendation-noun> | <recommendations-noun> | 'recommendation\'s' ] <results> }
-    rule recommended-items { <recommended-adjective> <items-slot> | [ <recommendations-noun> | <recommendation-noun> ]    <.results>?    }
+    rule recommendation-results { [ <recommendation-noun> | <recommendations-noun> | <recommended-adjective> ] <results> }
+    rule recommended-items { <recommended-adjective> <items-slot> | [ <recommendations-noun> | <recommendation-noun> ]  <.results>? }
     rule recommender-object-phrase { <recommender-noun> [ <object-noun> | <system-noun> ]? | 'smr' }
     rule sparse-matrix { <sparse-adjective> <matrix-noun> }
     rule sub-matrices-phrase { <sub-matrices-noun> | <sub-prefix> <matrices-noun> | <sub-prefix> <matrixes-noun> }
@@ -93,10 +93,10 @@ role DSL::Bulgarian::RecommenderWorkflows::Grammar::RecommenderPhrases
 
     # LSI specific
     token frequency-noun { 'честота' }
-    token global-adjective { 'глобален' | 'глобално' }
-    token inverse-adjective { 'обратент' | 'обратно' }
-    token local-adjective { 'локален' | 'локално' }
-    token normalization-noun { 'номализация' | 'нормализиране' }
+    token global-adjective { 'глобален' | 'глобална' | 'глобално' | 'глобални' }
+    token inverse-adjective { 'обратент' | 'обратна' | 'обратно' | 'обратни'  }
+    token local-adjective { 'локален' | 'локална' | 'локално' | 'локални' }
+    token normalization-noun { 'нормализация' | 'нормализиране' }
     token normalizer-noun { 'нормализатор' }
     token normalizing-noun { 'нормализиране' }
 
