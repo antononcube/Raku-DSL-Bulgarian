@@ -55,8 +55,8 @@ role DSL::Bulgarian::RecommenderWorkflows::Grammar::RecommenderPhrases
     token sub-matrices-noun { 'под' \h+ '-' \h+ <matrices-noun> }
 
     rule prove-directive { <prove-verb> | <explain-verb> }
-    rule consumption-history { <consumption-slot>? <history-noun> }
-    rule consumption-profile { <consumption-slot>? <profile-noun> }
+    rule consumption-history { <consumption-noun>? <history-noun> }
+    rule consumption-profile { <consumption-noun>? <profile-noun> }
     rule cross-tabulate-phrase { 'cross' [ 'tabulate' | 'tabulation' ] }
     rule extend-recommendations-phrase { <across-adverb> <join-noun> <recommendations-noun>? }
     rule history-phrase { [ <item-noun> ]? <history-noun> }
