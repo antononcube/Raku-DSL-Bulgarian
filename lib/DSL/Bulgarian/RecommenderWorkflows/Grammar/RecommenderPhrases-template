@@ -65,7 +65,7 @@ role DSL::Bulgarian::RecommenderWorkflows::Grammar::RecommenderPhrases
     rule recommendation-matrices { [ <recommendation-noun> | <recommender-noun> ]? <matrices-noun> }
     rule recommendation-matrix { [ <recommendation-noun> | <recommender-noun> ]? <matrix-noun> }
     rule recommendation-results { [ <recommendation-noun> | <recommendations-noun> | <recommended-adjective> ] <results> }
-    rule recommended-items { <recommended-adjective> <items-slot> | [ <recommendations-noun> | <recommendation-noun> ]  <.results>? }
+    rule recommended-items { <recommended-adjective> <items-noun> | [ <recommendations-noun> | <recommendation-noun> ]  <.results>? }
     rule recommender-object-phrase { <recommender-noun> [ <object-noun> | <system-noun> ]? | 'smr' }
     rule sparse-matrix { <sparse-adjective> <matrix-noun> }
     rule sub-matrices-phrase { <sub-matrices-noun> | <sub-prefix> <matrices-noun> | <sub-prefix> <matrixes-noun> }
