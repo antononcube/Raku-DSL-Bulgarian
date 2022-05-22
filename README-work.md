@@ -14,18 +14,21 @@ Translation to other natural languages is also done: English, Korean, Russian, S
 
 ## Data query (wrangling) workflows
 
+Translate Bulgarian data wrangling specifications to different natural and programming languages:
+
 ```perl6
 use DSL::English::DataQueryWorkflows;
 
 my $command = '
 зареди данните iris;
 вземи елементите от 1 до 120;
+филтрирай чрез Sepal.Width е по-голямо от 2.4 и Petal.Length е по-малко от 5.5; 
 групирай с колоната Species;
 покажи размерите
 ';
-for <English Python::pandas Raku::Reshapers Russian> -> $t {
-    say '=' x 60, "\n", $t, "\n", '-' x 60;
-    say ToDataQueryWorkflowCode($command, $t, language => 'Bulgarian', format => 'code');
+for <English Python::pandas Raku::Reshapers Spanish Russian> -> $t {
+   say '=' x 60, "\n", $t, "\n", '-' x 60;
+   say ToDataQueryWorkflowCode($command, $t, language => 'Bulgarian', format => 'code');
 }
 ```
 

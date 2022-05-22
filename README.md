@@ -14,18 +14,21 @@ Translation to other natural languages is also done: English, Korean, Russian, S
 
 ## Data query (wrangling) workflows
 
+Translate Bulgarian data wrangling specifications to different natural and programming languages:
+
 ```perl6
 use DSL::English::DataQueryWorkflows;
 
 my $command = '
 зареди данните iris;
 вземи елементите от 1 до 120;
+филтрирай чрез Sepal.Width е по-голямо от 2.4 и Petal.Length е по-малко от 5.5; 
 групирай с колоната Species;
 покажи размерите
 ';
-for <English Python::pandas Raku::Reshapers Russian> -> $t {
-    say '=' x 60, "\n", $t, "\n", '-' x 60;
-    say ToDataQueryWorkflowCode($command, $t, language => 'Bulgarian', format => 'code');
+for <English Python::pandas Raku::Reshapers Spanish Russian> -> $t {
+   say '=' x 60, "\n", $t, "\n", '-' x 60;
+   say ToDataQueryWorkflowCode($command, $t, language => 'Bulgarian', format => 'code');
 }
 ```
 ```
@@ -34,6 +37,7 @@ for <English Python::pandas Raku::Reshapers Russian> -> $t {
 # ------------------------------------------------------------
 # load the data table: "iris"
 # take elements from 1 to 120
+# filter with the predicate: ((Sepal.Width greater than 2.4) и (Petal.Length less than 5.5))
 # group by the columns: Species
 # show the count(s)
 # ============================================================
@@ -41,6 +45,7 @@ for <English Python::pandas Raku::Reshapers Russian> -> $t {
 # ------------------------------------------------------------
 # obj = example_dataset('iris')
 # obj.iloc[1-1:120]
+# obj = obj[((obj["Sepal.Width"]> 2.4) & (obj["Petal.Length"]< 5.5))]
 # obj = obj.groupby(["Species"])
 # print(obj.size())
 # ============================================================
@@ -48,13 +53,23 @@ for <English Python::pandas Raku::Reshapers Russian> -> $t {
 # ------------------------------------------------------------
 # my $obj = example-dataset('iris') ;
 # $obj = $obj[ (1 - 1) ... (120 - 1 ) ] ;
+# $obj = $obj.grep({ $_{"Sepal.Width"} > 2.4 and $_{"Petal.Length"} < 5.5 }).Array ;
 # $obj = group-by( $obj, "Species") ;
 # say "counts: ", $obj>>.elems
+# ============================================================
+# Spanish
+# ------------------------------------------------------------
+# cargar la tabla: "iris"
+# tomar los elementos de 1 a 120
+# filtrar con la condicion: ((Sepal.Width más grande 2.4) y (Petal.Length menos 5.5))
+# agrupar con columnas: "Species"
+# mostrar recuentos
 # ============================================================
 # Russian
 # ------------------------------------------------------------
 # загрузить таблицу: "iris"
 # взять элементы с 1 по 120
+# фильтровать с предикатом: ((Sepal.Width больше 2.4) и (Petal.Length меньше 5.5))
 # групировать с колонками: Species
 # показать число
 ```
@@ -81,7 +96,7 @@ for <English Python::SMRMon R::SMRMon Russian> -> $t {
 # ------------------------------------------------------------
 # create with data table: dfTitanic
 # recommend with the profile: ["male", "died"]
-# echo the pipeline value
+# show the pipeline value
 # ============================================================
 # Python::SMRMon
 # ------------------------------------------------------------
@@ -97,7 +112,7 @@ for <English Python::SMRMon R::SMRMon Russian> -> $t {
 # ------------------------------------------------------------
 # создать с таблицу: dfTitanic
 # рекомендуй с профилю: ["male", "died"]
-# показать текущее значение ленту
+# показать текущее значение конвейера
 ```
 
 -------
@@ -129,17 +144,12 @@ for <English Python::LSAMon R::LSAMon Russian> -> $t {
 # make the document-term matrix with the parameters: use the stop words: NULL
 # apply the latent semantic analysis (LSI) functions: global weight function : "IDF", local weight function : "None", normalizer function : "Cosine"
 # extract 12 topics using the parameters: method : Non-Negative Matrix Factorization (NNMF), max number of steps : 12
-# show topics table using the parameters: numberOfTerms = 12)
+# show topics table using the parameters: numberOfTerms = 12
 # show the pipeline value
 # ============================================================
 # Python::LSAMon
 # ------------------------------------------------------------
-# (LatentSemanticAnalyzer(textHamlet)
-#    .make_document_term_matrix( stop_words = None)
-#    .apply_term_weight_functions(global_weight_func = "IDF", local_weight_func = "None", normalizer_func = "Cosine")
-#    .extract_topics(number_of_topics = 12, method = "NNMF", max_steps = 12)
-#    .echo_topics_table(numberOfTerms = 12)
-#    .echo_value())
+# LatentSemanticAnalyzer(textHamlet).make_document_term_matrix( stop_words = None).apply_term_weight_functions(global_weight_func = "IDF", local_weight_func = "None", normalizer_func = "Cosine").extract_topics(number_of_topics = 12, method = "NNMF", max_steps = 12).echo_topics_table(numberOfTerms = 12).echo_value()
 # ============================================================
 # R::LSAMon
 # ------------------------------------------------------------
