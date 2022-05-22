@@ -23,7 +23,7 @@ role DSL::Bulgarian::DataQueryWorkflows::Grammar::DataQueryPhrases {
     token glimpse-verb:sym<Bulgarian> { :i 'надзърни' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'надзърни', 2) }> | 'зърни' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'зърни', 2) }> }
     token group-verb:sym<Bulgarian> { :i 'групирай' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'групирай', 2) }> }
     token inner-adjective:sym<Bulgarian> { :i 'вътрешен' | ([\w]+) <?{ $0.Str !(elem) <вътрешна вътрешно> and is-bg-fuzzy-match($0.Str, 'вътрешен', 2) }> | 'вътрешна' | ([\w]+) <?{ $0.Str !(elem) <вътрешен вътрешно> and is-bg-fuzzy-match($0.Str, 'вътрешна', 2) }> | 'вътрешно' | ([\w]+) <?{ $0.Str !(elem) <вътрешен вътрешна> and is-bg-fuzzy-match($0.Str, 'вътрешно', 2) }> }
-    token keep-verb:sym<Bulgarian> { :i 'запази' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'запази', 2) }> | 'дръж' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'дръж', 2) }> }
+    token keep-verb:sym<Bulgarian> { :i 'запази' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'запази', 2) }> | 'задържи' | ([\w]+) <?{ $0.Str ne 'задръж' and is-bg-fuzzy-match($0.Str, 'задържи', 2) }> | 'задръж' | ([\w]+) <?{ $0.Str !(elem) <задържи дръж> and is-bg-fuzzy-match($0.Str, 'задръж', 2) }> | 'дръж' | ([\w]+) <?{ $0.Str ne 'задръж' and is-bg-fuzzy-match($0.Str, 'дръж', 2) }> }
     token long-adjective:sym<Bulgarian> { :i 'дълъг' | ([\w]+) <?{ $0.Str !(elem) <дълга дълго> and is-bg-fuzzy-match($0.Str, 'дълъг', 2) }> | 'дълга' | ([\w]+) <?{ $0.Str !(elem) <пълна дълъг дълго> and is-bg-fuzzy-match($0.Str, 'дълга', 2) }> | 'дълго' | ([\w]+) <?{ $0.Str !(elem) <пълно дълъг дълга> and is-bg-fuzzy-match($0.Str, 'дълго', 2) }> }
     token longer-adjective:sym<Bulgarian> { :i 'по-дълъг' | ([\w]+) <?{ $0.Str !(elem) <по-дълга по-дълго> and is-bg-fuzzy-match($0.Str, 'по-дълъг', 2) }> | 'по-дълга' | ([\w]+) <?{ $0.Str !(elem) <по-дълъг по-дълго> and is-bg-fuzzy-match($0.Str, 'по-дълга', 2) }> | 'по-дълго' | ([\w]+) <?{ $0.Str !(elem) <по-дълъг по-дълга> and is-bg-fuzzy-match($0.Str, 'по-дълго', 2) }> }
     token map-verb:sym<Bulgarian> { :i 'асоциирай' | ([\w]+) <?{ $0.Str ne 'асоцииране' and is-bg-fuzzy-match($0.Str, 'асоциирай', 2) }> }
@@ -56,4 +56,5 @@ role DSL::Bulgarian::DataQueryWorkflows::Grammar::DataQueryPhrases {
     token wide-adjective:sym<Bulgarian> { :i 'широка' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'широка', 2) }> }
     token wider-adjective:sym<Bulgarian> { :i 'по-широка' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'по-широка', 2) }> }
 }
+
 
