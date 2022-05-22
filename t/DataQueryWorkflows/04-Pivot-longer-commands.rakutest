@@ -1,3 +1,7 @@
+use v6.d;
+
+use lib './lib';
+use lib '.';
 
 use DSL::Bulgarian::DataQueryWorkflows::Grammar;
 use Test;

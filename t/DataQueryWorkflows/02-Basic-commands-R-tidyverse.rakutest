@@ -1,5 +1,8 @@
 use v6.d;
 
+use lib './lib';
+use lib '.';
+
 use DSL::English::DataQueryWorkflows;
 use DSL::Bulgarian::DataQueryWorkflows::Grammar;
 use Test;
