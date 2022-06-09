@@ -50,7 +50,6 @@ role DSL::Bulgarian::RecommenderWorkflows::Grammar::RecommenderPhrases
     token rownames-noun:sym<Bulgarian> { :i 'rownames' | ([\w]+) <?{ $0.Str ne 'colnames' and is-bg-fuzzy-match($0.Str, 'rownames', 2) }> }
     token tag-adjective:sym<Bulgarian> { :i <tag-noun> }
     token tag-noun:sym<Bulgarian> { :i 'етикет' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'етикет', 2) }> }
-    token threshold-noun:sym<Bulgarian> { :i 'праг' | ([\w]+) <?{ $0.Str ne 'през' and is-bg-fuzzy-match($0.Str, 'праг', 2) }> }
     token sub-matrix-noun:sym<Bulgarian> { :i  'под' \h+ '-' \h+ <matrix-noun>  }
     token sub-matrices-noun:sym<Bulgarian> { :i  'под' \h+ '-' \h+ <matrices-noun>  }
 

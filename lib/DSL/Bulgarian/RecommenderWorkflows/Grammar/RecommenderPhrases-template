@@ -50,7 +50,6 @@ role DSL::Bulgarian::RecommenderWorkflows::Grammar::RecommenderPhrases
     token rownames-noun { 'rownames' }
     token tag-adjective { <tag-noun> }
     token tag-noun { 'етикет' }
-    token threshold-noun { 'праг' }
     token sub-matrix-noun { 'под' \h+ '-' \h+ <matrix-noun> }
     token sub-matrices-noun { 'под' \h+ '-' \h+ <matrices-noun> }
 
