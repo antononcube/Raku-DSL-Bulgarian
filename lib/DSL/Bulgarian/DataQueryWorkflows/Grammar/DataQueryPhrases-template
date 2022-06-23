@@ -25,7 +25,7 @@ role DSL::Bulgarian::DataQueryWorkflows::Grammar::DataQueryPhrases {
     token inner-adjective { 'вътрешен' | 'вътрешна' | 'вътрешно' }
     token keep-verb { 'запази' | 'задържи' | 'задръж' | 'дръж' }
     token long-adjective { 'дълъг' | 'дълга' | 'дълго' }
-    token longer-adjective { 'по-дълъг' | 'по-дълга' | 'по-дълго' }
+    token longer-adjective { 'по-дълъг' | 'по-дълга' | 'по-дълго' | 'по-дълги' }
     token map-verb { 'асоциирай' }
     token mapping-noun { 'асоцииране' }
     token melt-verb { 'разтопи' }
@@ -54,5 +54,5 @@ role DSL::Bulgarian::DataQueryWorkflows::Grammar::DataQueryPhrases {
     token ungroup-verb { 'разгрупирай' }
     token unique-adjective { 'уникален' | 'уникални' }
     token wide-adjective { 'широка' }
-    token wider-adjective { 'по-широка' }
+    token wider-adjective { 'по-широк' |  'по-широка' | 'по-широко' |  'по-широки' }
 }
