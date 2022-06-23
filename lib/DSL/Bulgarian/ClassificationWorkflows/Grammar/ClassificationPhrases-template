@@ -42,7 +42,6 @@ role DSL::Bulgarian::ClassificationWorkflows::Grammar::ClassificationPhrases
     token split-directive { 'дели' | 'раздели' | 'сцепи' | 'цепи' }
     token test-verb { 'тествай' }
     token testing-adjective { 'тестващ' | 'тестваща' | 'тестващо' | 'тестващи' }
-    token threshold-noun { 'праг' }
     token train-verb { 'тренирай' }
     token training-adjective { 'тренироващ' | 'тренироваща' | 'тренироващо' | 'тренироващи' | 'тренировачен' | 'тренировачна' | 'тренировачно' | 'тренировачни' }
     token validation-adjective { 'валидационен' | 'валидационна' | 'валидационно' | 'валидационни' | 'валидиращ' | 'валидираща' | 'валидиращо' | 'валидиращи'}
