@@ -6,7 +6,7 @@ use lib '.';
 use DSL::Bulgarian::DataQueryWorkflows::Grammar;
 use Test;
 
-plan 12;
+plan 9;
 
 # Shortcut
 my $pCOMMAND = DSL::Bulgarian::DataQueryWorkflows::Grammar;
@@ -43,21 +43,9 @@ ok $pCOMMAND.parse('във дълга форма'),
 ok $pCOMMAND.parse('развърни в дълга форма'),
         'развърни в дълга форма';
 
-# 8
-ok $pCOMMAND.parse('развърни в дълга форма със променливи колони V1 и V2'),
-        'развърни в дълга форма със променливи колони V1 и V2';
-
 # 9
 ok $pCOMMAND.parse('развърни в дълга форма с колоните V1, V2, и VAR5'),
         'развърни в дълга форма с колоните V1, V2, и VAR5';
-
-# 10
-ok $pCOMMAND.parse('развърни в дълга форма със id колоните ID1, ID2 със променливи колони V1 и V2'),
-        'развърни в дълга форма със id колоните ID1, ID2 със променливи колони V1 и V2';
-
-# 11
-ok $pCOMMAND.parse('превърни в дълга форма чрез идентификаторни колони ID1, ID2 и със променливи колони V1 и V2'),
-        'превърни в дълга форма чрез идентификаторни колони ID1, ID2 и със променливи колони V1 и V2';
 
 # 12
 # This is parsed but the result is not correct: the identifier columns list is {"ID1", "ID2", "variable"}.
