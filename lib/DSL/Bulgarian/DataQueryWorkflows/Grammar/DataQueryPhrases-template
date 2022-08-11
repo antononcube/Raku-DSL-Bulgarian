@@ -50,7 +50,8 @@ role DSL::Bulgarian::DataQueryWorkflows::Grammar::DataQueryPhrases {
     token splitting-noun { 'разделяне' }
     token summarise-verb { 'обобщи' }
     token summarize-verb { 'обобщи' }
-    token tabulate-verb { 'табулиряй' }
+    token tabulate-verb { 'табулирай' }
+    token tabulation-noun { 'табулация' }
     token ungroup-verb { 'разгрупирай' }
     token unique-adjective { 'уникален' | 'уникални' }
     token wide-adjective { 'широка' }

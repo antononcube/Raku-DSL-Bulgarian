@@ -50,7 +50,8 @@ role DSL::Bulgarian::DataQueryWorkflows::Grammar::DataQueryPhrases {
     token splitting-noun:sym<Bulgarian> { :i 'разделяне' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'разделяне', 2) }> }
     token summarise-verb:sym<Bulgarian> { :i 'обобщи' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'обобщи', 2) }> }
     token summarize-verb:sym<Bulgarian> { :i 'обобщи' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'обобщи', 2) }> }
-    token tabulate-verb:sym<Bulgarian> { :i 'табулиряй' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'табулиряй', 2) }> }
+    token tabulate-verb:sym<Bulgarian> { :i 'табулирай' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'табулирай', 2) }> }
+    token tabulation-noun:sym<Bulgarian> { :i 'табулация' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'табулация', 2) }> }
     token ungroup-verb:sym<Bulgarian> { :i 'разгрупирай' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'разгрупирай', 2) }> }
     token unique-adjective:sym<Bulgarian> { :i 'уникален' | ([\w]+) <?{ $0.Str ne 'уникални' and is-bg-fuzzy-match($0.Str, 'уникален', 2) }> | 'уникални' | ([\w]+) <?{ $0.Str ne 'уникален' and is-bg-fuzzy-match($0.Str, 'уникални', 2) }> }
     token wide-adjective:sym<Bulgarian> { :i 'широка' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'широка', 2) }> }
