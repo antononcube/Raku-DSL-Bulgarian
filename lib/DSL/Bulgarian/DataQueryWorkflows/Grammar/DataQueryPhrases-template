@@ -10,7 +10,8 @@ role DSL::Bulgarian::DataQueryWorkflows::Grammar::DataQueryPhrases {
     token cast-verb { 'формирай' }
     token character-noun { 'символ' }
     token combine-verb { 'комбинирай' }
-    token cross-verb { 'кръстосана' }
+    token cross-adjective { 'кръстосан' | 'кръстосана' | 'кръстосано' | 'кръстосани' | 'крос' }
+    token cross-verb { 'кръстосай'  }
     token descending-adjective { 'низходящ' }
     token distinct-adjective { 'уникален' | 'уникални' }
     token divider-noun { 'разделител' }
@@ -51,7 +52,7 @@ role DSL::Bulgarian::DataQueryWorkflows::Grammar::DataQueryPhrases {
     token summarise-verb { 'обобщи' }
     token summarize-verb { 'обобщи' }
     token tabulate-verb { 'табулирай' }
-    token tabulation-noun { 'табулация' }
+    token tabulation-noun { 'табулация' | 'табулиране' }
     token ungroup-verb { 'разгрупирай' }
     token unique-adjective { 'уникален' | 'уникални' }
     token wide-adjective { 'широка' }

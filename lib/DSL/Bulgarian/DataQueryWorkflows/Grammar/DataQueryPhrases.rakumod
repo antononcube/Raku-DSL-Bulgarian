@@ -10,7 +10,8 @@ role DSL::Bulgarian::DataQueryWorkflows::Grammar::DataQueryPhrases {
     token cast-verb:sym<Bulgarian> { :i 'формирай' | ([\w]+) <?{ $0.Str ne 'сортирай' and is-bg-fuzzy-match($0.Str, 'формирай', 2) }> }
     token character-noun:sym<Bulgarian> { :i 'символ' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'символ', 2) }> }
     token combine-verb:sym<Bulgarian> { :i 'комбинирай' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'комбинирай', 2) }> }
-    token cross-verb:sym<Bulgarian> { :i 'кръстосана' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'кръстосана', 2) }> }
+    token cross-adjective:sym<Bulgarian> { :i 'кръстосан' | ([\w]+) <?{ $0.Str !(elem) <кръстосана кръстосано кръстосани кръстосай> and is-bg-fuzzy-match($0.Str, 'кръстосан', 2) }> | 'кръстосана' | ([\w]+) <?{ $0.Str !(elem) <кръстосан кръстосано кръстосани кръстосай> and is-bg-fuzzy-match($0.Str, 'кръстосана', 2) }> | 'кръстосано' | ([\w]+) <?{ $0.Str !(elem) <кръстосан кръстосана кръстосани кръстосай> and is-bg-fuzzy-match($0.Str, 'кръстосано', 2) }> | 'кръстосани' | ([\w]+) <?{ $0.Str !(elem) <кръстосан кръстосана кръстосано кръстосай> and is-bg-fuzzy-match($0.Str, 'кръстосани', 2) }> | 'крос' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'крос', 2) }> }
+    token cross-verb:sym<Bulgarian> { :i 'кръстосай' | ([\w]+) <?{ $0.Str !(elem) <кръстосан кръстосана кръстосано кръстосани> and is-bg-fuzzy-match($0.Str, 'кръстосай', 2) }> }
     token descending-adjective:sym<Bulgarian> { :i 'низходящ' | ([\w]+) <?{ $0.Str ne 'възходящ' and is-bg-fuzzy-match($0.Str, 'низходящ', 2) }> }
     token distinct-adjective:sym<Bulgarian> { :i 'уникален' | ([\w]+) <?{ $0.Str ne 'уникални' and is-bg-fuzzy-match($0.Str, 'уникален', 2) }> | 'уникални' | ([\w]+) <?{ $0.Str ne 'уникален' and is-bg-fuzzy-match($0.Str, 'уникални', 2) }> }
     token divider-noun:sym<Bulgarian> { :i 'разделител' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'разделител', 2) }> }
@@ -50,8 +51,8 @@ role DSL::Bulgarian::DataQueryWorkflows::Grammar::DataQueryPhrases {
     token splitting-noun:sym<Bulgarian> { :i 'разделяне' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'разделяне', 2) }> }
     token summarise-verb:sym<Bulgarian> { :i 'обобщи' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'обобщи', 2) }> }
     token summarize-verb:sym<Bulgarian> { :i 'обобщи' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'обобщи', 2) }> }
-    token tabulate-verb:sym<Bulgarian> { :i 'табулирай' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'табулирай', 2) }> }
-    token tabulation-noun:sym<Bulgarian> { :i 'табулация' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'табулация', 2) }> }
+    token tabulate-verb:sym<Bulgarian> { :i 'табулирай' | ([\w]+) <?{ $0.Str ne 'табулиране' and is-bg-fuzzy-match($0.Str, 'табулирай', 2) }> }
+    token tabulation-noun:sym<Bulgarian> { :i 'табулация' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'табулация', 2) }> | 'табулиране' | ([\w]+) <?{ $0.Str ne 'табулирай' and is-bg-fuzzy-match($0.Str, 'табулиране', 2) }> }
     token ungroup-verb:sym<Bulgarian> { :i 'разгрупирай' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'разгрупирай', 2) }> }
     token unique-adjective:sym<Bulgarian> { :i 'уникален' | ([\w]+) <?{ $0.Str ne 'уникални' and is-bg-fuzzy-match($0.Str, 'уникален', 2) }> | 'уникални' | ([\w]+) <?{ $0.Str ne 'уникален' and is-bg-fuzzy-match($0.Str, 'уникални', 2) }> }
     token wide-adjective:sym<Bulgarian> { :i 'широка' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'широка', 2) }> }
