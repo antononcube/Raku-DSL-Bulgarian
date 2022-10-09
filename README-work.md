@@ -34,18 +34,21 @@ for <English Python::pandas Raku::Reshapers Spanish Russian> -> $t {
 
 -------
 
+## Classification workflows
+
 ```perl6
-use DSL::English::RecommenderWorkflows;
+use DSL::English::ClassificationWorkflows;
 
 my $command = '
-създай чрез dfTitanic;
-препоръчай със профила "male" и "died";
-покажи текущата лентова стойност
+използвай dfTitanic;
+раздели данните с цепещо съотношение 0.82;
+направи gradient boosted trees класификатор;
+покажи TruePositiveRate и FalsePositiveRate;
 ';
 
-for <English Python::SMRMon R::SMRMon Russian> -> $t {
+for <English Russian WL::ClCon> -> $t {
     say '=' x 60, "\n", $t, "\n", '-' x 60;
-    say ToRecommenderWorkflowCode($command, $t, language => 'Bulgarian', format => 'code');
+    say ToClassificationWorkflowCode($command, $t, language => 'Bulgarian', format => 'code');
 }
 ```
 
@@ -97,23 +100,22 @@ for <English R::QRMon Russian WL::QRMon> -> $t {
 
 -------
 
-## Classification workflows
+## Recommender workflows
 
 ```perl6
-use DSL::English::ClassificationWorkflows;
+use DSL::English::RecommenderWorkflows;
 
 my $command = '
-използвай dfTitanic;
-раздели данните с цепещо съотношение 0.82;
-направи gradient boosted trees класификатор;
+създай чрез dfTitanic;
+препоръчай със профила "male" и "died";
+покажи текущата лентова стойност
 ';
 
-for <English Russian WL::ClCon> -> $t {
+for <English Python::SMRMon R::SMRMon Russian> -> $t {
     say '=' x 60, "\n", $t, "\n", '-' x 60;
-    say ToClassificationWorkflowCode($command, $t, language => 'Bulgarian', format => 'code');
+    say ToRecommenderWorkflowCode($command, $t, language => 'Bulgarian', format => 'code');
 }
 ```
-
 
 -------
 
@@ -236,11 +238,26 @@ Here are the steps:
 [GitHub/antononcube](https://github.com/antononcube).
 
 [AAp4] Anton Antonov,
-[DSL::English::DataQueryWorkflows, Raku package](https://github.com/antononcube/Raku-DSL-General-DataQueryWorkflows),
-(2022),
+[DSL::English::ClassificationWorkflows, Raku package](https://github.com/antononcube/Raku-DSL-General-ClassificationWorkflows),
+(2018-2022),
 [GitHub/antononcube](https://github.com/antononcube).
 
 [AAp5] Anton Antonov,
 [DSL::English::DataQueryWorkflows, Raku package](https://github.com/antononcube/Raku-DSL-English-DataQueryWorkflows),
 (2020-2022),
+[GitHub/antononcube](https://github.com/antononcube).
+
+[AAp6] Anton Antonov,
+[DSL::English::LatentSemanticAnalysisWorkflows, Raku package](https://github.com/antononcube/Raku-DSL-General-LatentSemanticAnalysisWorkflows),
+(2018-2022),
+[GitHub/antononcube](https://github.com/antononcube).
+
+[AAp7] Anton Antonov,
+[DSL::English::QuantileRegressionWorkflows, Raku package](https://github.com/antononcube/Raku-DSL-General-QuantileRegressionWorkflows),
+(2018-2022),
+[GitHub/antononcube](https://github.com/antononcube).
+
+[AAp8] Anton Antonov,
+[DSL::English::QuantileRegressionWorkflows, Raku package](https://github.com/antononcube/Raku-DSL-General-RecommenderWorkflows),
+(2018-2022),
 [GitHub/antononcube](https://github.com/antononcube).

@@ -44,7 +44,7 @@ for <English Python::pandas Raku::Reshapers Spanish Russian> -> $t {
 # Python::pandas
 # ------------------------------------------------------------
 # obj = example_dataset('iris')
-# obj.iloc[1-1:120]
+# obj = obj.iloc[1-1:120]
 # obj = obj[((obj["Sepal.Width"]> 2.4) & (obj["Petal.Length"]< 5.5))]
 # obj = obj.groupby(["Species"])
 # print(obj.size())
@@ -54,7 +54,7 @@ for <English Python::pandas Raku::Reshapers Spanish Russian> -> $t {
 # my $obj = example-dataset('iris') ;
 # $obj = $obj[ (1 - 1) ... (120 - 1 ) ] ;
 # $obj = $obj.grep({ $_{"Sepal.Width"} > 2.4 and $_{"Petal.Length"} < 5.5 }).Array ;
-# $obj = group-by( $obj, "Species") ;
+# $obj = group-by($obj, "Species") ;
 # say "counts: ", $obj>>.elems
 # ============================================================
 # Spanish
@@ -76,43 +76,43 @@ for <English Python::pandas Raku::Reshapers Spanish Russian> -> $t {
 
 -------
 
+## Classification workflows
+
 ```perl6
-use DSL::English::RecommenderWorkflows;
+use DSL::English::ClassificationWorkflows;
 
 my $command = '
-създай чрез dfTitanic;
-препоръчай със профила "male" и "died";
-покажи текущата лентова стойност
+използвай dfTitanic;
+раздели данните с цепещо съотношение 0.82;
+направи gradient boosted trees класификатор;
+покажи TruePositiveRate и FalsePositiveRate;
 ';
 
-for <English Python::SMRMon R::SMRMon Russian> -> $t {
+for <English Russian WL::ClCon> -> $t {
     say '=' x 60, "\n", $t, "\n", '-' x 60;
-    say ToRecommenderWorkflowCode($command, $t, language => 'Bulgarian', format => 'code');
+    say ToClassificationWorkflowCode($command, $t, language => 'Bulgarian', format => 'code');
 }
 ```
 ```
 # ============================================================
 # English
 # ------------------------------------------------------------
-# create with data table: dfTitanic
-# recommend with the profile: ["male", "died"]
-# show the pipeline value
-# ============================================================
-# Python::SMRMon
-# ------------------------------------------------------------
-# obj = SparseMatrixRecommender().create_from_wide_form( data = dfTitanic).recommend_by_profile( profile = ["male", "died"]).echo_value()
-# ============================================================
-# R::SMRMon
-# ------------------------------------------------------------
-# SMRMonCreate( data = dfTitanic) %>%
-# SMRMonRecommendByProfile( profile = c("male", "died")) %>%
-# SMRMonEchoValue()
+# use the data: dfTitanic 
+# split into training and testing data with the proportion 0.82 
+# train classifier with method: gradient boosted trees
 # ============================================================
 # Russian
 # ------------------------------------------------------------
-# создать с таблицу: dfTitanic
-# рекомендуй с профилю: ["male", "died"]
-# показать текущее значение конвейера
+# использовать данные: dfTitanic 
+# разделить данные на пропорцию 0.82 
+# обучить классификатор методом: gradient boosted trees
+# ============================================================
+# WL::ClCon
+# ------------------------------------------------------------
+# ClConUnit[ dfTitanic ] \[DoubleLongRightArrow]
+# ClConSplitData[ 0.82 ] \[DoubleLongRightArrow]
+# ClConMakeClassifier[ "GradientBoostedTrees" ] \[DoubleLongRightArrow]
+# ClConClassifierMeasurements[ {"Recall", "FalsePositiveRate"} ] \[DoubleLongRightArrow] ClConEchoValue[]
 ```
 
 -------
@@ -137,6 +137,10 @@ for <English Python::LSAMon R::LSAMon Russian> -> $t {
 }
 ```
 ```
+#ERROR: Possible misspelling of 'термини' as 'термина'.
+#ERROR: Possible misspelling of 'термини' as 'термина'.
+#ERROR: Possible misspelling of 'термини' as 'термина'.
+#ERROR: Possible misspelling of 'термини' as 'термина'.
 # ============================================================
 # English
 # ------------------------------------------------------------
@@ -194,6 +198,10 @@ for <English R::QRMon Russian WL::QRMon> -> $t {
 }
 ```
 ```
+#ERROR: Possible misspelling of 'възли' as 'възела'.
+#ERROR: Possible misspelling of 'възли' as 'възела'.
+#ERROR: Possible misspelling of 'възли' as 'възела'.
+#ERROR: Possible misspelling of 'възли' as 'възела'.
 # ============================================================
 # English
 # ------------------------------------------------------------
@@ -242,43 +250,46 @@ for <English R::QRMon Russian WL::QRMon> -> $t {
 
 -------
 
-## Classification workflows
+## Recommender workflows
 
 ```perl6
-use DSL::English::ClassificationWorkflows;
+use DSL::English::RecommenderWorkflows;
 
 my $command = '
-използвай dfTitanic;
-раздели данните с цепещо съотношение 0.82;
-направи gradient boosted trees класификатор;
+създай чрез dfTitanic;
+препоръчай със профила "male" и "died";
+покажи текущата лентова стойност
 ';
 
-for <English Russian WL::ClCon> -> $t {
+for <English Python::SMRMon R::SMRMon Russian> -> $t {
     say '=' x 60, "\n", $t, "\n", '-' x 60;
-    say ToClassificationWorkflowCode($command, $t, language => 'Bulgarian', format => 'code');
+    say ToRecommenderWorkflowCode($command, $t, language => 'Bulgarian', format => 'code');
 }
 ```
 ```
 # ============================================================
 # English
 # ------------------------------------------------------------
-# use the data: dfTitanic 
-# split into training and testing data with the proportion 0.82 
-# train classifier with method: gradient boosted trees
+# create with data table: dfTitanic
+# recommend with the profile: ["male", "died"]
+# show the pipeline value
+# ============================================================
+# Python::SMRMon
+# ------------------------------------------------------------
+# obj = SparseMatrixRecommender().create_from_wide_form(data = dfTitanic).recommend_by_profile( profile = ["male", "died"]).echo_value()
+# ============================================================
+# R::SMRMon
+# ------------------------------------------------------------
+# SMRMonCreate(data = dfTitanic) %>%
+# SMRMonRecommendByProfile( profile = c("male", "died")) %>%
+# SMRMonEchoValue()
 # ============================================================
 # Russian
 # ------------------------------------------------------------
-# использовать данные: dfTitanic 
-# разделить данные на пропорцию 0.82 
-# обучить классификатор методом: gradient boosted trees
-# ============================================================
-# WL::ClCon
-# ------------------------------------------------------------
-# ClConUnit[ dfTitanic ] \[DoubleLongRightArrow]
-# ClConSplitData[ 0.82 ] \[DoubleLongRightArrow]
-# ClConMakeClassifier[  ]
+# создать с таблицу: dfTitanic
+# рекомендуй с профилю: ["male", "died"]
+# показать текущее значение конвейера
 ```
-
 
 -------
 
@@ -401,11 +412,26 @@ Here are the steps:
 [GitHub/antononcube](https://github.com/antononcube).
 
 [AAp4] Anton Antonov,
-[DSL::English::DataQueryWorkflows, Raku package](https://github.com/antononcube/Raku-DSL-General-DataQueryWorkflows),
-(2022),
+[DSL::English::ClassificationWorkflows, Raku package](https://github.com/antononcube/Raku-DSL-General-ClassificationWorkflows),
+(2018-2022),
 [GitHub/antononcube](https://github.com/antononcube).
 
 [AAp5] Anton Antonov,
 [DSL::English::DataQueryWorkflows, Raku package](https://github.com/antononcube/Raku-DSL-English-DataQueryWorkflows),
 (2020-2022),
+[GitHub/antononcube](https://github.com/antononcube).
+
+[AAp6] Anton Antonov,
+[DSL::English::LatentSemanticAnalysisWorkflows, Raku package](https://github.com/antononcube/Raku-DSL-General-LatentSemanticAnalysisWorkflows),
+(2018-2022),
+[GitHub/antononcube](https://github.com/antononcube).
+
+[AAp7] Anton Antonov,
+[DSL::English::QuantileRegressionWorkflows, Raku package](https://github.com/antononcube/Raku-DSL-General-QuantileRegressionWorkflows),
+(2018-2022),
+[GitHub/antononcube](https://github.com/antononcube).
+
+[AAp8] Anton Antonov,
+[DSL::English::QuantileRegressionWorkflows, Raku package](https://github.com/antononcube/Raku-DSL-General-RecommenderWorkflows),
+(2018-2022),
 [GitHub/antononcube](https://github.com/antononcube).
