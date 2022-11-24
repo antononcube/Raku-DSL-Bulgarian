@@ -10,8 +10,8 @@ role DSL::Bulgarian::ClassificationWorkflows::Grammar::ClassificationPhrases
     token accuracy-noun { 'прецизност' }
     token accuracies-noun { 'прецизности' }
     token available-adjective { 'налични' }
-    token characteristic-noun { 'харакетеристика' }
-    token characteristics-noun { 'харакетеристики' }
+    token characteristic-noun { 'характеристика' }
+    token characteristics-noun { 'характеристики' }
     token class-adjective { 'класов' | 'класова' | 'класово' | 'класови' }
     token class-noun { 'клас' }
     token classes-noun { 'класове' }

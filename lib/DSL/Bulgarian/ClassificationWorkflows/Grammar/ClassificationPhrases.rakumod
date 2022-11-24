@@ -10,8 +10,8 @@ role DSL::Bulgarian::ClassificationWorkflows::Grammar::ClassificationPhrases
     token accuracy-noun:sym<Bulgarian> { :i 'прецизност' | ([\w]+) <?{ $0.Str ne 'прецизности' and is-bg-fuzzy-match($0.Str, 'прецизност', 2) }> }
     token accuracies-noun:sym<Bulgarian> { :i 'прецизности' | ([\w]+) <?{ $0.Str ne 'прецизност' and is-bg-fuzzy-match($0.Str, 'прецизности', 2) }> }
     token available-adjective:sym<Bulgarian> { :i 'налични' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'налични', 2) }> }
-    token characteristic-noun:sym<Bulgarian> { :i 'харакетеристика' | ([\w]+) <?{ $0.Str ne 'харакетеристики' and is-bg-fuzzy-match($0.Str, 'харакетеристика', 2) }> }
-    token characteristics-noun:sym<Bulgarian> { :i 'харакетеристики' | ([\w]+) <?{ $0.Str ne 'харакетеристика' and is-bg-fuzzy-match($0.Str, 'харакетеристики', 2) }> }
+    token characteristic-noun:sym<Bulgarian> { :i 'характеристика' | ([\w]+) <?{ $0.Str ne 'характеристики' and is-bg-fuzzy-match($0.Str, 'характеристика', 2) }> }
+    token characteristics-noun:sym<Bulgarian> { :i 'характеристики' | ([\w]+) <?{ $0.Str ne 'характеристика' and is-bg-fuzzy-match($0.Str, 'характеристики', 2) }> }
     token class-adjective:sym<Bulgarian> { :i 'класов' | ([\w]+) <?{ $0.Str !(elem) <класова класово класови клас класове> and is-bg-fuzzy-match($0.Str, 'класов', 2) }> | 'класова' | ([\w]+) <?{ $0.Str !(elem) <класов класово класови класове> and is-bg-fuzzy-match($0.Str, 'класова', 2) }> | 'класово' | ([\w]+) <?{ $0.Str !(elem) <класов класова класови класове> and is-bg-fuzzy-match($0.Str, 'класово', 2) }> | 'класови' | ([\w]+) <?{ $0.Str !(elem) <класов класова класово класове> and is-bg-fuzzy-match($0.Str, 'класови', 2) }> }
     token class-noun:sym<Bulgarian> { :i 'клас' | ([\w]+) <?{ $0.Str ne 'класов' and is-bg-fuzzy-match($0.Str, 'клас', 2) }> }
     token classes-noun:sym<Bulgarian> { :i 'класове' | ([\w]+) <?{ $0.Str !(elem) <класов класова класово класови> and is-bg-fuzzy-match($0.Str, 'класове', 2) }> }
