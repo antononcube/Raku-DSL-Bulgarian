@@ -301,7 +301,7 @@ are derived from file
 ["DataQueryPhrases-template"](./lib/DSL/Bulgarian/DataQueryWorkflows/Grammar/DataQueryPhrases-template)
 using the package
 ["Grammar::TokenProcessing"](https://github.com/antononcube/Raku-Grammar-TokenProcessing)
-, [AAp2].
+, [AAp3].
 
 In order to have Bulgarian commands parsed and interpreted into code the steps taken were
 split into four phases: 
@@ -335,7 +335,7 @@ DSLs grammar development in order to facilitate handling of misspellings.
 This sub-section lists the steps for endowing a certain already developed workflows DSL package 
 with Bulgarian translations.
 
-Denote we DSL workflows we focus on as DOMAIN (workflows.) 
+Denote the DSL workflows we focus on as DOMAIN (workflows.) 
 For example, DOMAIN can stand for `DataQueryWorkflows`, or `RecommenderWorkflows`.
 
 *Remark:* In the recipe steps below DOMAIN would be
