@@ -93,7 +93,7 @@ role DSL::Bulgarian::RecommenderWorkflows::Grammar::RecommenderPhrases
     # LSI specific
     token frequency-noun { 'честота' }
     token global-adjective { 'глобален' | 'глобална' | 'глобално' | 'глобални' }
-    token inverse-adjective { 'обратент' | 'обратна' | 'обратно' | 'обратни'  }
+    token inverse-adjective { 'обратен' | 'обратна' | 'обратно' | 'обратни'  }
     token local-adjective { 'локален' | 'локална' | 'локално' | 'локални' }
     token normalization-noun { 'нормализация' | 'нормализиране' }
     token normalizer-noun { 'нормализатор' }

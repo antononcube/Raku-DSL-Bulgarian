@@ -48,7 +48,7 @@ role DSL::Bulgarian::LatentSemanticAnalysisWorkflows::Grammar::LatentSemanticAna
     # LSI specific
     token frequency-noun:sym<Bulgarian> { :i 'честота' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'честота', 2) }> }
     token global-adjective:sym<Bulgarian> { :i 'глобален' | ([\w]+) <?{ $0.Str !(elem) <глобално локален> and is-bg-fuzzy-match($0.Str, 'глобален', 2) }> | 'глобално' | ([\w]+) <?{ $0.Str !(elem) <глобален локално> and is-bg-fuzzy-match($0.Str, 'глобално', 2) }> }
-    token inverse-adjective:sym<Bulgarian> { :i 'обратент' | ([\w]+) <?{ $0.Str ne 'обратно' and is-bg-fuzzy-match($0.Str, 'обратент', 2) }> | 'обратно' | ([\w]+) <?{ $0.Str ne 'обратент' and is-bg-fuzzy-match($0.Str, 'обратно', 2) }> }
+    token inverse-adjective:sym<Bulgarian> { :i 'обратен' | ([\w]+) <?{ $0.Str ne 'обратно' and is-bg-fuzzy-match($0.Str, 'обратен', 2) }> | 'обратно' | ([\w]+) <?{ $0.Str ne 'обратен' and is-bg-fuzzy-match($0.Str, 'обратно', 2) }> }
     token local-adjective:sym<Bulgarian> { :i 'локален' | ([\w]+) <?{ $0.Str !(elem) <глобален локално> and is-bg-fuzzy-match($0.Str, 'локален', 2) }> | 'локално' | ([\w]+) <?{ $0.Str !(elem) <глобално локален> and is-bg-fuzzy-match($0.Str, 'локално', 2) }> }
     token normalization-noun:sym<Bulgarian> { :i 'номализация' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'номализация', 2) }> | 'нормализиране' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'нормализиране', 2) }> }
     token normalizer-noun:sym<Bulgarian> { :i 'нормализатор' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'нормализатор', 2) }> }

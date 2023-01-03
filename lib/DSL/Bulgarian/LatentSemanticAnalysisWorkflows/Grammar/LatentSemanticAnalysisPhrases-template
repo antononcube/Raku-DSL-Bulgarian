@@ -48,7 +48,7 @@ role DSL::Bulgarian::LatentSemanticAnalysisWorkflows::Grammar::LatentSemanticAna
     # LSI specific
     token frequency-noun { 'честота' }
     token global-adjective { 'глобален' | 'глобално' }
-    token inverse-adjective { 'обратент' | 'обратно' }
+    token inverse-adjective { 'обратен' | 'обратно' }
     token local-adjective { 'локален' | 'локално' }
     token normalization-noun { 'номализация' | 'нормализиране' }
     token normalizer-noun { 'нормализатор' }
