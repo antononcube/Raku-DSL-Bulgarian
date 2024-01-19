@@ -2,7 +2,7 @@
 
 ## In brief
 
-This Raku package facilitates the specification computational workflows using 
+This Raku package facilitates the specification of computational workflows using 
 natural language commands in Bulgarian.
 
 Using the Domain Specific Languages (DSLs) executable code is generated for different
@@ -14,7 +14,7 @@ Translation to other natural languages is also done: English, Korean, Russian, S
 
 ## Data query (wrangling) workflows
 
-Translate Bulgarian data wrangling specifications to different natural and programming languages:
+Translate Bulgarian data wrangling specifications to different natural- and programming languages:
 
 ```perl6
 use DSL::English::DataQueryWorkflows;
