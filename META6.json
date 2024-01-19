@@ -9,10 +9,10 @@
   "auth": "zef:antononcube",
   "depends": [
     "DSL::Shared:ver<0.1.2+>",
-    "DSL::English::ClassificationWorkflows:<0.8.0+>",
+    "DSL::English::ClassificationWorkflows:<0.1.1+>",
     "DSL::English::DataQueryWorkflows:ver<0.5.9+>",
     "DSL::English::LatentSemanticAnalysisWorkflows:ver<0.8.0+>",
-    "DSL::English::QuantileRegressionWorkflows:<0.8.0+>",
+    "DSL::English::QuantileRegressionWorkflows:<0.8.1+>",
     "DSL::English::RecommenderWorkflows:<0.8.0+>"
   ],
   "build-depends": [],
