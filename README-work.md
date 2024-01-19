@@ -5,16 +5,16 @@
 This Raku package facilitates the specification of computational workflows using 
 natural language commands in Bulgarian.
 
-Using the Domain Specific Languages (DSLs) executable code is generated for different
-programming languages: Julia, Python, R, Raku, Wolfram Language.
+Using the Domain Specific Languages (DSLs), executable code is generated for different
+programming languages: Julia, Python, R, Raku, and Wolfram Language.
 
-Translation to other natural languages is also done: English, Korean, Russian, Spanish.
+Translation to other natural languages is also done: English, Korean, Russian, and Spanish.
 
 ------
 
 ## Data query (wrangling) workflows
 
-Translate Bulgarian data wrangling specifications to different natural- and programming languages:
+Translate Bulgarian data wrangling specifications to different natural and programming languages:
 
 ```perl6
 use DSL::English::DataQueryWorkflows;
@@ -146,13 +146,13 @@ it was clear that some the required code transformations have to be automated.
 While doing the preparation work -- and in general, while the DSL-translation work matured -- 
 it became clear that there are several directives to follow:
 
-1. Make and use Command Line Interface (CLI) scripts that do code transformation or generation.
+1. Make and use Command Line Interface (CLI) scripts that do code transformations or generate code.
 
-2. Adhere to of the [Eric Raymond's 17 Unix Rules](https://en.wikipedia.org/wiki/Unix_philosophy), [Wk1]:
+2. Adhere to [Eric Raymond's 17 Unix Rules](https://en.wikipedia.org/wiki/Unix_philosophy), [Wk1]:
    - *Make data complicated when required, not the program*
    - *Write abstract programs that generate code instead of writing code by hand*
 
-In order to facilitate the  "from Bulgarian" project the package "Grammar::TokenProcessing", [AAp3],
+In order to facilitate the "from Bulgarian" project the package "Grammar::TokenProcessing", [AAp3],
 was "finalized." The initial versions of that package were used from the very beginning of the
 DSLs grammar development in order to facilitate handling of misspellings.
 
