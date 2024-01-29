@@ -97,11 +97,17 @@ for <English Russian WL::ClCon> -> $t {
 # ============================================================
 # English
 # ------------------------------------------------------------
-# [use the data: dfTitanic split into training and testing data with the proportion 0.82 train classifier with method: gradient boosted trees  (Any)]
+# use the data: dfTitanic 
+# split into training and testing data with the proportion 0.82 
+# train classifier with method: gradient boosted trees  
+# compute the classifier measures: "Recall", "FalsePositiveRate"
 # ============================================================
 # Russian
 # ------------------------------------------------------------
-# [использовать данные: dfTitanic разделить данные на пропорцию 0.82 обучить классификатор методом: gradient boosted trees  (Any)]
+# использовать данные: dfTitanic 
+# разделить данные на пропорцию 0.82 
+# обучить классификатор методом: gradient boosted trees  
+# вычислить следующие показатели классификатора: "Recall", "FalsePositiveRate"
 # ============================================================
 # WL::ClCon
 # ------------------------------------------------------------
@@ -145,7 +151,7 @@ for <English Python::LSAMon R::LSAMon Russian> -> $t {
 # ============================================================
 # Python::LSAMon
 # ------------------------------------------------------------
-# LatentSemanticAnalyzer(textHamlet).make_document_term_matrix( stop_words = None).apply_term_weight_functions(global_weight_func = "IDF", local_weight_func = "None", normalizer_func = "Cosine").extract_topics(number_of_topics = 12, method = "NNMF", max_steps = 12).echo_topics_table(numberOfTerms = 12).echo_value()
+# LatentSemanticAnalyzer(textHamlet).make_document_term_matrix( stop_words = None).apply_term_weight_functions(global_weight_func = "IDF", local_weight_func = "None", normalizer_func = "Cosine").extract_topics(number_of_topics = 12, method = "NNMF", max_steps = 12).echo_topics_table(number_of_terms = 12).echo_value()
 # ============================================================
 # R::LSAMon
 # ------------------------------------------------------------
