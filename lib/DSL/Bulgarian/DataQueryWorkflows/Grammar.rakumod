@@ -1,5 +1,3 @@
-use v6.d;
-
 use DSL::Shared::Roles::Bulgarian::ListManagementCommand;
 use DSL::Shared::Roles::Bulgarian::PipelineCommand;
 use DSL::Shared::Roles::ErrorHandling;

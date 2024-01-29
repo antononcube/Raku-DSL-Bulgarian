@@ -1,5 +1,3 @@
-use v6;
-
 use DSL::Shared::Roles::ErrorHandling;
 use DSL::Shared::Roles::English::PipelineCommand;
 use DSL::Shared::Roles::Bulgarian::PipelineCommand;

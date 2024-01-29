@@ -1,5 +1,3 @@
-use v6.d;
-
 use DSL::Bulgarian::ClassificationWorkflows::Grammar::ClassificationPhrases;
 use DSL::English::ClassificationWorkflows::Grammar::ClassificationPhrases;
 use DSL::English::ClassificationWorkflows::Grammarish;

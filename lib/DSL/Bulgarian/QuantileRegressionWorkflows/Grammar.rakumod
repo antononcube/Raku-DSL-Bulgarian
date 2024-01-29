@@ -1,5 +1,3 @@
-use v6.d;
-
 use DSL::Bulgarian::QuantileRegressionWorkflows::Grammar::TimeSeriesAndRegressionPhrases;
 use DSL::English::QuantileRegressionWorkflows::Grammar::TimeSeriesAndRegressionPhrases;
 use DSL::English::QuantileRegressionWorkflows::Grammarish;
