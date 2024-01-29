@@ -1,11 +1,7 @@
-use v6;
-
 use DSL::Shared::Utilities::DeterminedWordsMatching;
-use DSL::Shared::Roles::Bulgarian::PipelineCommand;
 
 # Recommender specific phrases
-role DSL::Bulgarian::RecommenderWorkflows::Grammar::RecommenderPhrases
-                does DSL::Shared::Roles::Bulgarian::PipelineCommand {
+role DSL::Bulgarian::RecommenderWorkflows::Grammar::RecommenderPhrases {
 
     token word-spec:sym<Bulgarian> { :i  \w+  }
 
@@ -19,10 +15,8 @@ role DSL::Bulgarian::RecommenderWorkflows::Grammar::RecommenderPhrases
     token colnames-noun:sym<Bulgarian> { :i 'colnames' | ([\w]+) <?{ $0.Str ne 'rownames' and is-bg-fuzzy-match($0.Str, 'colnames', 2) }> }
     token consumption-noun:sym<Bulgarian> { :i 'консумация' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'консумация', 2) }> }
     token density-noun:sym<Bulgarian> { :i 'гъстота' | ([\w]+) <?{ $0.Str ne 'честота' and is-bg-fuzzy-match($0.Str, 'гъстота', 2) }> | 'разреденост' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'разреденост', 2) }> }
-    token dimensions-noun:sym<Bulgarian> { :i 'размери' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'размери', 2) }> }
     token explain-verb:sym<Bulgarian> { :i 'обясни' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'обясни', 2) }> }
     token explanations-noun:sym<Bulgarian> { :i 'обяснение' | ([\w]+) <?{ $0.Str ne 'обяснения' and is-bg-fuzzy-match($0.Str, 'обяснение', 2) }> | 'обяснения' | ([\w]+) <?{ $0.Str ne 'обяснение' and is-bg-fuzzy-match($0.Str, 'обяснения', 2) }> }
-    token function-noun:sym<Bulgarian> { :i 'функция' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'функция', 2) }> }
     token history-noun:sym<Bulgarian> { :i 'история' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'история', 2) }> }
     token item-noun:sym<Bulgarian> { :i 'нещо' | ([\w]+) <?{ $0.Str ne 'неща' and is-bg-fuzzy-match($0.Str, 'нещо', 2) }> }
     token items-noun:sym<Bulgarian> { :i 'неща' | ([\w]+) <?{ $0.Str ne 'нещо' and is-bg-fuzzy-match($0.Str, 'неща', 2) }> }
@@ -78,7 +72,6 @@ role DSL::Bulgarian::RecommenderWorkflows::Grammar::RecommenderPhrases
     token analysis-noun:sym<Bulgarian> { :i 'анализ' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'анализ', 2) }> }
     token entries-noun:sym<Bulgarian> { :i 'елементи' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'елементи', 2) }> }
     token indexing-noun:sym<Bulgarian> { :i 'индексиране' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'индексиране', 2) }> }
-    token ingest-verb:sym<Bulgarian> { :i 'обработи' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'обработи', 2) }> | 'приеми' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'приеми', 2) }> | 'зареди' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'зареди', 2) }> | 'изполвай' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'изполвай', 2) }> | 'вземи' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'вземи', 2) }> }
     token latent-adjective:sym<Bulgarian> { :i 'латентен' | ([\w]+) <?{ $0.Str ne 'латентно' and is-bg-fuzzy-match($0.Str, 'латентен', 2) }> | 'латентно' | ([\w]+) <?{ $0.Str ne 'латентен' and is-bg-fuzzy-match($0.Str, 'латентно', 2) }> }
     token semantic-adjective:sym<Bulgarian> { :i 'семантичен' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'семантичен', 2) }> }
     token term-noun:sym<Bulgarian> { :i 'термин' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'термин', 2) }> }

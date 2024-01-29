@@ -1,11 +1,7 @@
-use v6;
-
-use DSL::Shared::Roles::Bulgarian::PipelineCommand;
 use DSL::Shared::Utilities::DeterminedWordsMatching;
 
 # Data query specific phrases
-role DSL::Bulgarian::ClassificationWorkflows::Grammar::ClassificationPhrases
-        does DSL::Shared::Roles::Bulgarian::PipelineCommand {
+role DSL::Bulgarian::ClassificationWorkflows::Grammar::ClassificationPhrases  {
     # Tokens
     token accuracy-noun:sym<Bulgarian> { :i 'прецизност' | ([\w]+) <?{ $0.Str ne 'прецизности' and is-bg-fuzzy-match($0.Str, 'прецизност', 2) }> }
     token accuracies-noun:sym<Bulgarian> { :i 'прецизности' | ([\w]+) <?{ $0.Str ne 'прецизност' and is-bg-fuzzy-match($0.Str, 'прецизности', 2) }> }

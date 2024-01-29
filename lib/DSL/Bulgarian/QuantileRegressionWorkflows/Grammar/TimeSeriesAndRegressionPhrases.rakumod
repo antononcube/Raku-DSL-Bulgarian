@@ -1,11 +1,7 @@
-use v6;
-
 use DSL::Shared::Utilities::DeterminedWordsMatching;
-use DSL::Shared::Roles::Bulgarian::PipelineCommand;
 
 # Time series and regression specific phrases
-role DSL::Bulgarian::QuantileRegressionWorkflows::Grammar::TimeSeriesAndRegressionPhrases
-        does DSL::Shared::Roles::Bulgarian::PipelineCommand {
+role DSL::Bulgarian::QuantileRegressionWorkflows::Grammar::TimeSeriesAndRegressionPhrases {
 
     # Proto tokens
     token absolute-adjective:sym<Bulgarian> { :i 'абсолютен' | ([\w]+) <?{ $0.Str !(elem) <абсолютна абсолютни> and is-bg-fuzzy-match($0.Str, 'абсолютен', 2) }> | 'абсолютна' | ([\w]+) <?{ $0.Str !(elem) <абсолютен абсолютни> and is-bg-fuzzy-match($0.Str, 'абсолютна', 2) }> | 'абсолютна' | ([\w]+) <?{ $0.Str !(elem) <абсолютен абсолютни> and is-bg-fuzzy-match($0.Str, 'абсолютна', 2) }> | 'абсолютни' | ([\w]+) <?{ $0.Str !(elem) <абсолютен абсолютна> and is-bg-fuzzy-match($0.Str, 'абсолютни', 2) }> }
@@ -14,8 +10,6 @@ role DSL::Bulgarian::QuantileRegressionWorkflows::Grammar::TimeSeriesAndRegressi
     token average-adjective:sym<Bulgarian> { :i 'средeн' | ([\w]+) <?{ $0.Str !(elem) <среднa средно средни> and is-bg-fuzzy-match($0.Str, 'средeн', 2) }> | 'среднa' | ([\w]+) <?{ $0.Str !(elem) <средeн средно средни> and is-bg-fuzzy-match($0.Str, 'среднa', 2) }> | 'средно' | ([\w]+) <?{ $0.Str !(elem) <средeн среднa средни> and is-bg-fuzzy-match($0.Str, 'средно', 2) }> | 'средни' | ([\w]+) <?{ $0.Str !(elem) <средeн среднa средно> and is-bg-fuzzy-match($0.Str, 'средни', 2) }> }
     token curve-noun:sym<Bulgarian> { :i 'крива' | ([\w]+) <?{ $0.Str ne 'криви' and is-bg-fuzzy-match($0.Str, 'крива', 2) }> }
     token curves-noun:sym<Bulgarian> { :i 'криви' | ([\w]+) <?{ $0.Str ne 'крива' and is-bg-fuzzy-match($0.Str, 'криви', 2) }> }
-    token date-noun:sym<Bulgarian> { :i 'дата' | ([\w]+) <?{ $0.Str ne 'дати' and is-bg-fuzzy-match($0.Str, 'дата', 2) }> }
-    token dates-noun:sym<Bulgarian> { :i 'дати' | ([\w]+) <?{ $0.Str ne 'дата' and is-bg-fuzzy-match($0.Str, 'дати', 2) }> }
     token degree-noun:sym<Bulgarian> { :i 'степен' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'степен', 2) }> }
     token error-noun:sym<Bulgarian> { :i 'грешка' | ([\w]+) <?{ $0.Str ne 'грешки' and is-bg-fuzzy-match($0.Str, 'грешка', 2) }> }
     token errors-noun:sym<Bulgarian> { :i 'грешка' | ([\w]+) <?{ $0.Str ne 'грешки' and is-bg-fuzzy-match($0.Str, 'грешка', 2) }> | 'грешки' | ([\w]+) <?{ $0.Str ne 'грешка' and is-bg-fuzzy-match($0.Str, 'грешки', 2) }> }

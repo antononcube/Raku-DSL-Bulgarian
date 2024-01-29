@@ -1,11 +1,7 @@
-use v6;
-
 use DSL::Shared::Utilities::DeterminedWordsMatching;
-use DSL::Shared::Roles::Bulgarian::PipelineCommand;
 
 # Time series and regression specific phrases
-role DSL::Bulgarian::QuantileRegressionWorkflows::Grammar::TimeSeriesAndRegressionPhrases
-        does DSL::Shared::Roles::Bulgarian::PipelineCommand {
+role DSL::Bulgarian::QuantileRegressionWorkflows::Grammar::TimeSeriesAndRegressionPhrases {
 
     # Proto tokens
     token absolute-adjective { 'абсолютен' | 'абсолютна' | 'абсолютна' | 'абсолютни' }
@@ -14,8 +10,6 @@ role DSL::Bulgarian::QuantileRegressionWorkflows::Grammar::TimeSeriesAndRegressi
     token average-adjective { 'средeн' | 'среднa' | 'средно' | 'средни' }
     token curve-noun { 'крива' }
     token curves-noun { 'криви' }
-    token date-noun { 'дата' }
-    token dates-noun { 'дати' }
     token degree-noun { 'степен' }
     token error-noun { 'грешка' }
     token errors-noun { 'грешка' | 'грешки' }
