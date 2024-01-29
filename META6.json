@@ -8,7 +8,7 @@
   ],
   "auth": "zef:antononcube",
   "depends": [
-    "DSL::Shared:ver<0.1.2+>",
+    "DSL::Shared:ver<0.2.3+>",
     "DSL::English::ClassificationWorkflows:<0.1.1+>",
     "DSL::English::DataQueryWorkflows:ver<0.5.9+>",
     "DSL::English::LatentSemanticAnalysisWorkflows:ver<0.8.0+>",
