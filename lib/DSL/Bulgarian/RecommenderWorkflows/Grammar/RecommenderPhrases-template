@@ -20,13 +20,8 @@ role DSL::Bulgarian::RecommenderWorkflows::Grammar::RecommenderPhrases {
     token history-noun { 'история' }
     token item-noun { 'нещо' }
     token items-noun { 'неща' }
-    token matrices-noun { 'матрици' }
-    token matrix-noun { 'матрица' }
-    token matrixes-noun { 'матрици' }
     token metadata-noun { 'мета-данни' | 'мета' \h* 'данни' }
     token most-determiner { 'повечето' }
-    token nearest-adjective { 'най' \h* '-' \h* близки }
-    token neighbors-noun { 'съседи' }
     token profile-noun { 'профил' }
     token proofs-noun { 'доказателство' | 'доказателствa' | 'свидетелство' | 'свидетелства' }
     token properties-noun { 'свойства' | 'характеристики' }
@@ -40,7 +35,6 @@ role DSL::Bulgarian::RecommenderWorkflows::Grammar::RecommenderPhrases {
     token recommended-adjective { 'препоръчан' | 'препоръчана' | 'препоръчено' | 'препоръчани' }
     token recommender-noun { 'препоръчител' | 'препоръчителка' }
     token relevant-adjective { 'подходящ' | 'подходяща' }
-    token row-noun { 'редица' }
     token rownames-noun { 'rownames' }
     token tag-adjective { <tag-noun> }
     token tag-noun { 'етикет' }

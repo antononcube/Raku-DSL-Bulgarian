@@ -20,13 +20,8 @@ role DSL::Bulgarian::RecommenderWorkflows::Grammar::RecommenderPhrases {
     token history-noun:sym<Bulgarian> { :i 'история' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'история', 2) }> }
     token item-noun:sym<Bulgarian> { :i 'нещо' | ([\w]+) <?{ $0.Str ne 'неща' and is-bg-fuzzy-match($0.Str, 'нещо', 2) }> }
     token items-noun:sym<Bulgarian> { :i 'неща' | ([\w]+) <?{ $0.Str ne 'нещо' and is-bg-fuzzy-match($0.Str, 'неща', 2) }> }
-    token matrices-noun:sym<Bulgarian> { :i 'матрици' | ([\w]+) <?{ $0.Str ne 'матрица' and is-bg-fuzzy-match($0.Str, 'матрици', 2) }> }
-    token matrix-noun:sym<Bulgarian> { :i 'матрица' | ([\w]+) <?{ $0.Str ne 'матрици' and is-bg-fuzzy-match($0.Str, 'матрица', 2) }> }
-    token matrixes-noun:sym<Bulgarian> { :i 'матрици' | ([\w]+) <?{ $0.Str ne 'матрица' and is-bg-fuzzy-match($0.Str, 'матрици', 2) }> }
     token metadata-noun:sym<Bulgarian> { :i  'мета-данни' | 'мета' \h* 'данни'  }
     token most-determiner:sym<Bulgarian> { :i 'повечето' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'повечето', 2) }> }
-    token nearest-adjective:sym<Bulgarian> { :i  'най' \h* '-' \h* близки  }
-    token neighbors-noun:sym<Bulgarian> { :i 'съседи' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'съседи', 2) }> }
     token profile-noun:sym<Bulgarian> { :i 'профил' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'профил', 2) }> }
     token proofs-noun:sym<Bulgarian> { :i 'доказателство' | ([\w]+) <?{ $0.Str ne 'доказателствa' and is-bg-fuzzy-match($0.Str, 'доказателство', 2) }> | 'доказателствa' | ([\w]+) <?{ $0.Str ne 'доказателство' and is-bg-fuzzy-match($0.Str, 'доказателствa', 2) }> | 'свидетелство' | ([\w]+) <?{ $0.Str ne 'свидетелства' and is-bg-fuzzy-match($0.Str, 'свидетелство', 2) }> | 'свидетелства' | ([\w]+) <?{ $0.Str ne 'свидетелство' and is-bg-fuzzy-match($0.Str, 'свидетелства', 2) }> }
     token properties-noun:sym<Bulgarian> { :i 'свойства' | ([\w]+) <?{ $0.Str ne 'свойство' and is-bg-fuzzy-match($0.Str, 'свойства', 2) }> | 'характеристики' | ([\w]+) <?{ $0.Str ne 'характеристика' and is-bg-fuzzy-match($0.Str, 'характеристики', 2) }> }
@@ -40,7 +35,6 @@ role DSL::Bulgarian::RecommenderWorkflows::Grammar::RecommenderPhrases {
     token recommended-adjective:sym<Bulgarian> { :i 'препоръчан' | ([\w]+) <?{ $0.Str !(elem) <препоръчай препоръчка препоръка препоръчки препоръчана препоръчено препоръчани> and is-bg-fuzzy-match($0.Str, 'препоръчан', 2) }> | 'препоръчана' | ([\w]+) <?{ $0.Str !(elem) <препоръчай препоръчка препоръчан препоръчено препоръчани> and is-bg-fuzzy-match($0.Str, 'препоръчана', 2) }> | 'препоръчено' | ([\w]+) <?{ $0.Str !(elem) <препоръчан препоръчана препоръчани> and is-bg-fuzzy-match($0.Str, 'препоръчено', 2) }> | 'препоръчани' | ([\w]+) <?{ $0.Str !(elem) <препоръчай препоръчки препоръчан препоръчана препоръчено> and is-bg-fuzzy-match($0.Str, 'препоръчани', 2) }> }
     token recommender-noun:sym<Bulgarian> { :i 'препоръчител' | ([\w]+) <?{ $0.Str ne 'препоръчителка' and is-bg-fuzzy-match($0.Str, 'препоръчител', 2) }> | 'препоръчителка' | ([\w]+) <?{ $0.Str ne 'препоръчител' and is-bg-fuzzy-match($0.Str, 'препоръчителка', 2) }> }
     token relevant-adjective:sym<Bulgarian> { :i 'подходящ' | ([\w]+) <?{ $0.Str ne 'подходяща' and is-bg-fuzzy-match($0.Str, 'подходящ', 2) }> | 'подходяща' | ([\w]+) <?{ $0.Str ne 'подходящ' and is-bg-fuzzy-match($0.Str, 'подходяща', 2) }> }
-    token row-noun:sym<Bulgarian> { :i 'редица' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'редица', 2) }> }
     token rownames-noun:sym<Bulgarian> { :i 'rownames' | ([\w]+) <?{ $0.Str ne 'colnames' and is-bg-fuzzy-match($0.Str, 'rownames', 2) }> }
     token tag-adjective:sym<Bulgarian> { :i <tag-noun> }
     token tag-noun:sym<Bulgarian> { :i 'етикет' | ([\w]+) <?{ is-bg-fuzzy-match($0.Str, 'етикет', 2) }> }
