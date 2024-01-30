@@ -2,6 +2,7 @@ use DSL::Bulgarian::ClassificationWorkflows::Grammar::ClassificationPhrases;
 use DSL::English::ClassificationWorkflows::Grammar::ClassificationPhrases;
 use DSL::English::ClassificationWorkflows::Grammarish;
 use DSL::Entity::MachineLearning::Grammar::EntityNames;
+use DSL::Entity::MachineLearning::ResourceAccess;
 use DSL::Shared::Roles::ErrorHandling;
 use DSL::Shared::Roles::PredicateSpecification;
 use DSL::Shared::Roles::Bulgarian::PipelineCommand;
