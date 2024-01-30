@@ -13,7 +13,7 @@
     "DSL::English::DataQueryWorkflows:ver<0.5.9+>",
     "DSL::English::LatentSemanticAnalysisWorkflows:ver<0.8.0+>",
     "DSL::English::QuantileRegressionWorkflows:ver<0.8.1+>",
-    "DSL::English::RecommenderWorkflows:ver<0.8.0+>",
+    "DSL::English::RecommenderWorkflows:ver<0.6.3+>",
     "DSL::Entity::MachineLearning:ver<0.1.1+>"
   ],
   "build-depends": [],
