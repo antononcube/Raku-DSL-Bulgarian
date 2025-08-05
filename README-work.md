@@ -124,7 +124,7 @@ for <English Python::SMRMon R::SMRMon Russian> -> $t {
 
 The rules in the file
 ["DataQueryPhrases.rakumod"](./lib/DSL/Bulgarian/DataQueryWorkflows/Grammar/DataQueryPhrases.rakumod)
-are derived from file
+are derived from the file
 ["DataQueryPhrases-template"](./lib/DSL/Bulgarian/DataQueryWorkflows/Grammar/DataQueryPhrases-template)
 using the package
 ["Grammar::TokenProcessing"](https://github.com/antononcube/Raku-Grammar-TokenProcessing)
@@ -142,7 +142,7 @@ split into four phases:
 ### Utilities preparation
 
 Since the beginning of the work on translation of the computational DSLs into programming code
-it was clear that some the required code transformations have to be automated.
+it was clear that some of the required code transformations have to be automated.
 
 While doing the preparation work -- and in general, while the DSL-translation work matured -- 
 it became clear that there are several directives to follow:
