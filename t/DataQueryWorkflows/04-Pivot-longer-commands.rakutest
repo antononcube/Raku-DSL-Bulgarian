@@ -1,5 +1,4 @@
-use lib './lib';
-use lib '.';
+# use lib <. lib>;
 
 use DSL::Bulgarian::DataQueryWorkflows::Grammar;
 use Test;

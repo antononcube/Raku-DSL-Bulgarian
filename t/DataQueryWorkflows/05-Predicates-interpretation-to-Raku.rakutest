@@ -1,7 +1,6 @@
 use Test;
 
-use lib './lib';
-use lib '.';
+# use lib <. lib>;
 
 use DSL::Shared::Actions::Raku::PredicateSpecification;
 use DSL::Shared::Roles::CommonStructures;
