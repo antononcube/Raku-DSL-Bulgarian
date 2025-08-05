@@ -1,5 +1,4 @@
-use lib './lib';
-use lib '.';
+# use lib <. lib>;
 
 use DSL::English::LatentSemanticAnalysisWorkflows;
 use DSL::Bulgarian::LatentSemanticAnalysisWorkflows::Grammar;

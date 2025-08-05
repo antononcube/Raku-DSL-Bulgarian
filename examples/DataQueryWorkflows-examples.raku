@@ -1,7 +1,6 @@
-use lib './lib';
-use lib '.';
+# use lib <. lib>;
 
-use DSL::General::DataQueryWorkflows;
+use DSL::English::DataQueryWorkflows;
 use DSL::Bulgarian::DataQueryWorkflows::Grammar;
 
 #-----------------------------------------------------------
@@ -13,7 +12,7 @@ sub dq-parse(Str:D $command, Str:D :$rule = 'TOP') {
 
 sub dq-interpret(Str:D $command,
                  Str:D:$rule = 'TOP',
-                 :$actions = DSL::Bulgarian::DataQueryWorkflows::Actions::Raku::Reshapers.new) {
+                 :$actions = DSL::English::DataQueryWorkflows::Actions::Raku::Reshapers.new) {
     $pCOMMAND.parse($command, :$rule, :$actions).made;
 }
 
@@ -45,12 +44,13 @@ for @testCommands -> $c {
         say $t;
         say '-' x 30;
         my $start = now;
-        # my $res0 = dq-parse($c, rule => 'workflow-commands-list'); say $res0;
-        my $res = ToDataQueryWorkflowCode($c, $t, lang => 'Bulgarian', format => 'hash');
+        #my $res0 = dq-parse($c, rule => 'workflow-commands-list'); say $res0;
+        #my $res1 = dq-interpret($c, rule => 'workflow-commands-list'); say $res1;
+        my $res = ToDataQueryWorkflowCode($c, $t, language => 'Bulgarian', format => 'hash');
         #        my $res =
         #                dq-interpret($c,
         #                        rule => 'workflow-commands-list',
-        #                        actions => DSL::General::DataQueryWorkflows::Actions::WL::System.new);
+        #                        actions => DSL::English::DataQueryWorkflows::Actions::WL::System.new);
         say "time:", now - $start;
         say $res;
     }

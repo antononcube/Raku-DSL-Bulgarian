@@ -1,5 +1,4 @@
-use lib './lib';
-use lib '.';
+# use lib <. lib>;
 
 use DSL::English::RecommenderWorkflows;
 use DSL::Bulgarian::RecommenderWorkflows::Grammar;
