@@ -1,5 +1,11 @@
 # Raku DSL::Bulgarian
 
+[![Actions Status](https://github.com/antononcube/Raku-DSL-Bulgarian/actions/workflows/linux.yml/badge.svg)](https://github.com/antononcube/Raku-DSL-Bulgarian/actions)
+[![Actions Status](https://github.com/antononcube/Raku-DSL-Bulgarian/actions/workflows/macos.yml/badge.svg)](https://github.com/antononcube/Raku-DSL-Bulgarian/actions)
+[![Actions Status](https://github.com/antononcube/Raku-DSL-Bulgarian/actions/workflows/windows.yml/badge.svg)](https://github.com/antononcube/Raku-DSL-Bulgarian/actions)
+
+[![](https://raku.land/zef:antononcube/DSL::Bulgarian/badges/version)](https://raku.land/zef:antononcube/DSL::Bulgarian)
+
 ## In brief
 
 This Raku package facilitates the specification of computational workflows using 
