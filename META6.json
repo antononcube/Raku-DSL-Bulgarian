@@ -1,44 +1,52 @@
 {
-  "name": "DSL::Bulgarian",
-  "description": "Computational workflows building by natural language commands in Bulgarian.",
-  "version": "0.1.1",
-  "authors": [
-    "Anton Antonov"
-  ],
-  "auth": "zef:antononcube",
-  "depends": [
-    "DSL::Shared:ver<0.2.3+>",
-    "DSL::English::ClassificationWorkflows:ver<0.1.1+>",
-    "DSL::English::DataQueryWorkflows:ver<0.5.9+>",
-    "DSL::English::LatentSemanticAnalysisWorkflows:ver<0.8.0+>",
-    "DSL::English::QuantileRegressionWorkflows:ver<0.8.1+>",
-    "DSL::English::RecommenderWorkflows:ver<0.6.3+>",
-    "DSL::Entity::MachineLearning:ver<0.1.1+>"
-  ],
-  "build-depends": [],
-  "provides": {
-    "DSL::Bulgarian": "lib/DSL/Bulgarian.rakumod",
-    "DSL::Bulgarian::ClassificationWorkflows::Grammar": "lib/DSL/Bulgarian/ClassificationWorkflows/Grammar.rakumod",
-    "DSL::Bulgarian::ClassificationWorkflows::Grammar::ClassificationPhrases": "lib/DSL/Bulgarian/ClassificationWorkflows/Grammar/ClassificationPhrases.rakumod",
-    "DSL::Bulgarian::DataQueryWorkflows::Grammar": "lib/DSL/Bulgarian/DataQueryWorkflows/Grammar.rakumod",
-    "DSL::Bulgarian::DataQueryWorkflows::Grammar::DataQueryPhrases": "lib/DSL/Bulgarian/DataQueryWorkflows/Grammar/DataQueryPhrases.rakumod",
-    "DSL::Bulgarian::LatentSemanticAnalysisWorkflows::Grammar": "lib/DSL/Bulgarian/LatentSemanticAnalysisWorkflows/Grammar.rakumod",
-    "DSL::Bulgarian::LatentSemanticAnalysisWorkflows::Grammar::LatentSemanticAnalysisPhrases": "lib/DSL/Bulgarian/LatentSemanticAnalysisWorkflows/Grammar/LatentSemanticAnalysisPhrases.rakumod",
-    "DSL::Bulgarian::QuantileRegressionWorkflows::Grammar": "lib/DSL/Bulgarian/QuantileRegressionWorkflows/Grammar.rakumod",
-    "DSL::Bulgarian::QuantileRegressionWorkflows::Grammar::TimeSeriesAndRegressionPhrases": "lib/DSL/Bulgarian/QuantileRegressionWorkflows/Grammar/TimeSeriesAndRegressionPhrases.rakumod",
-    "DSL::Bulgarian::RecommenderWorkflows::Grammar": "lib/DSL/Bulgarian/RecommenderWorkflows/Grammar.rakumod",
-    "DSL::Bulgarian::RecommenderWorkflows::Grammar::RecommenderPhrases": "lib/DSL/Bulgarian/RecommenderWorkflows/Grammar/RecommenderPhrases.rakumod"
-  },
-  "license": "GPL-3.0-or-later",
-  "tags": [
-    "bulgarian",
-    "dsl",
-    "parser",
-    "interpreter",
-    "monad",
-    "workflow",
-    "pipeline"
-  ],
-  "api": "1",
-  "source-url": "https://github.com/antononcube/Raku-DSL-Bulgarian.git"
+    "name": "DSL::Bulgarian",
+    "description": "Computational workflows building by natural language commands in Bulgarian.",
+    "version": "0.1.1",
+    "raku": "6.d",
+    "authors": [
+        "Anton Antonov"
+    ],
+    "auth": "zef:antononcube",
+    "depends": [
+        "DSL::Shared:ver<0.2.3+>",
+        "DSL::English::ClassificationWorkflows:ver<0.1.1+>",
+        "DSL::English::DataQueryWorkflows:ver<0.5.9+>",
+        "DSL::English::LatentSemanticAnalysisWorkflows:ver<0.8.0+>",
+        "DSL::English::QuantileRegressionWorkflows:ver<0.8.1+>",
+        "DSL::English::RecommenderWorkflows:ver<0.6.3+>",
+        "DSL::Entity::MachineLearning:ver<0.1.1+>"
+    ],
+    "build-depends": [],
+    "provides": {
+        "DSL::Bulgarian": "lib/DSL/Bulgarian.rakumod",
+        "DSL::Bulgarian::ClassificationWorkflows::Grammar": "lib/DSL/Bulgarian/ClassificationWorkflows/Grammar.rakumod",
+        "DSL::Bulgarian::ClassificationWorkflows::Grammar::ClassificationPhrases": "lib/DSL/Bulgarian/ClassificationWorkflows/Grammar/ClassificationPhrases.rakumod",
+        "DSL::Bulgarian::DataQueryWorkflows::Grammar": "lib/DSL/Bulgarian/DataQueryWorkflows/Grammar.rakumod",
+        "DSL::Bulgarian::DataQueryWorkflows::Grammar::DataQueryPhrases": "lib/DSL/Bulgarian/DataQueryWorkflows/Grammar/DataQueryPhrases.rakumod",
+        "DSL::Bulgarian::LatentSemanticAnalysisWorkflows::Grammar": "lib/DSL/Bulgarian/LatentSemanticAnalysisWorkflows/Grammar.rakumod",
+        "DSL::Bulgarian::LatentSemanticAnalysisWorkflows::Grammar::LatentSemanticAnalysisPhrases": "lib/DSL/Bulgarian/LatentSemanticAnalysisWorkflows/Grammar/LatentSemanticAnalysisPhrases.rakumod",
+        "DSL::Bulgarian::QuantileRegressionWorkflows::Grammar": "lib/DSL/Bulgarian/QuantileRegressionWorkflows/Grammar.rakumod",
+        "DSL::Bulgarian::QuantileRegressionWorkflows::Grammar::TimeSeriesAndRegressionPhrases": "lib/DSL/Bulgarian/QuantileRegressionWorkflows/Grammar/TimeSeriesAndRegressionPhrases.rakumod",
+        "DSL::Bulgarian::RecommenderWorkflows::Grammar": "lib/DSL/Bulgarian/RecommenderWorkflows/Grammar.rakumod",
+        "DSL::Bulgarian::RecommenderWorkflows::Grammar::RecommenderPhrases": "lib/DSL/Bulgarian/RecommenderWorkflows/Grammar/RecommenderPhrases.rakumod"
+    },
+    "resources": [
+        "ClassificationPhrases-template",
+        "DataQueryPhrases-template",
+        "LatentSemanticAnalysisPhrases-template",
+        "RecommenderPhrases-template",
+        "TimeSeriesAndRegressionPhrases-template"
+    ],
+    "license": "GPL-3.0-or-later",
+    "tags": [
+        "bulgarian",
+        "dsl",
+        "parser",
+        "interpreter",
+        "monad",
+        "workflow",
+        "pipeline"
+    ],
+    "api": "1",
+    "source-url": "https://github.com/antononcube/Raku-DSL-Bulgarian.git"
 }
