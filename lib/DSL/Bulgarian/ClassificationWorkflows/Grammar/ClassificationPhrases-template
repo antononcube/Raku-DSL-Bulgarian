@@ -35,7 +35,7 @@ role DSL::Bulgarian::ClassificationWorkflows::Grammar::ClassificationPhrases
     token roc-noun { 'рхп' }
     token rocs-noun { 'рхп' }
     token shuffling-noun { 'смесване' | 'разбъркване' }
-    token split-adjective { 'цепещ' | 'цепеща' | 'цепещо' | 'цепещи' | 'делящ' | 'деляща' | 'делящо' | 'делящи' }
+    token split-adjective { 'цепещ' | 'цепеща' | 'цепещо' | 'цепещи' | 'раз'? [ 'делящ' | 'деляща' | 'делящо' | 'делящи'] }
     token split-directive { 'дели' | 'раздели' | 'сцепи' | 'цепи' }
     token test-verb { 'тествай' }
     token testing-adjective { 'тестващ' | 'тестваща' | 'тестващо' | 'тестващи' }
