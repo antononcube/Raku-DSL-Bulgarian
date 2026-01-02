@@ -2,7 +2,6 @@
   "name": "DSL::Bulgarian",
   "description": "Computational workflows building by natural language commands in Bulgarian.",
   "version": "0.1.1",
-  "perl": "6.d",
   "authors": [
     "Anton Antonov"
   ],
@@ -17,8 +16,8 @@
     "DSL::Entity::MachineLearning:ver<0.1.1+>"
   ],
   "build-depends": [],
-  "test-depends": [],
   "provides": {
+    "DSL::Bulgarian": "lib/DSL/Bulgarian.rakumod",
     "DSL::Bulgarian::ClassificationWorkflows::Grammar": "lib/DSL/Bulgarian/ClassificationWorkflows/Grammar.rakumod",
     "DSL::Bulgarian::ClassificationWorkflows::Grammar::ClassificationPhrases": "lib/DSL/Bulgarian/ClassificationWorkflows/Grammar/ClassificationPhrases.rakumod",
     "DSL::Bulgarian::DataQueryWorkflows::Grammar": "lib/DSL/Bulgarian/DataQueryWorkflows/Grammar.rakumod",
@@ -30,7 +29,6 @@
     "DSL::Bulgarian::RecommenderWorkflows::Grammar": "lib/DSL/Bulgarian/RecommenderWorkflows/Grammar.rakumod",
     "DSL::Bulgarian::RecommenderWorkflows::Grammar::RecommenderPhrases": "lib/DSL/Bulgarian/RecommenderWorkflows/Grammar/RecommenderPhrases.rakumod"
   },
-  "resources": [],
   "license": "GPL-3.0-or-later",
   "tags": [
     "bulgarian",
